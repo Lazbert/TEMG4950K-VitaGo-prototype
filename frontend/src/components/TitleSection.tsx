@@ -28,3 +28,5 @@ export const TitleSection: React.FC<TitleSectionProps> = ({
     </div>
   );
 };
+
+export default TitleSection;

@@ -9,3 +9,5 @@ export const ContentSection: React.FC<ContentSectionProps> = ({ children }) => {
     </div>
   );
 };
+
+export default ContentSection;
