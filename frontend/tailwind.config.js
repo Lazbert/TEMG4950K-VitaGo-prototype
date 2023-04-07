@@ -4,27 +4,28 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontSize: {
+        "heading-1": "32px",
+        "heading-2": "24px",
+      },
+
       fontFamily: {
-        Montserrat: ["Montserrat"],
+        Inter: ["Inter", "sans-serif"],
       },
 
       colors: {
-        cardTextGrey: "#415968",
-        pinkTag: "#F59CA0",
-        blueTag: "#55B8CA",
-        yellowTag: "#F2BC28",
-        yellowBar: "#F2BC29",
-        todoAssignment: "#F2BC28",
-        todoTest: "#F59CA0",
-        progressBlue: "#BDDFF5",
-        progressPink: "#F59CA0",
-        progressOrange: "#55B8CA",
-        grayishLine: "#E2E4E5",
-        primaryDarkBlue: "#415968",
-        grey1: "#DBDBDB",
-        lightCyan: "#A2A6A8",
+        primaryBlue: "#95E0B8",
+        highlightBrick: "#D18F83",
+        primaryGreen: "#9CD950",
+        abnormalRed: "#E3644D",
+        mediumYellow: "#E3C24D",
+        normalGreen: "#3FCB45",
+        paleBlue: "#EDF6FF",
+        suppGreen: "#E4FFD7",
+        suppOrange: "#FFEDD2",
+        grey: "#494949",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };

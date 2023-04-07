@@ -1,4 +1,12 @@
 @tailwind base;
+
+@layer base {
+  html {
+    @apply text-grey;
+    @apply text-[16px];
+  }
+}
+
 @tailwind utilities;
 @tailwind components;
 
