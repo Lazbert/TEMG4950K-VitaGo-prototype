@@ -1,10 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import App from "./App";
+import IconPage from "./pages/IconPage";
+import ExplicitDataPage from "./pages/ExplicitDataPage";
 
 export default function WebRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<IconPage />} />
+      <Route path="/data" element={<ExplicitDataPage />} />
     </Routes>
   );
 }
