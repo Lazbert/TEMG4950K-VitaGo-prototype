@@ -6,7 +6,7 @@ export default function IconPage() {
   return (
     <div className="bg-no-repeat bg-[url('/images/VitaGo_IconPage.png')]">
       <button
-        onClick={() => nav("/data")}
+        onClick={() => nav("/VitaGo")}
         className="absolute top-[37.4%] left-[43.8%]"
       >
         <IconVitaGo className="h-[48px] w-[48px]" />

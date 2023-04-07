@@ -10,11 +10,11 @@ module.exports = {
       },
 
       fontFamily: {
-        Inter: ["Inter", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
       },
 
       colors: {
-        primaryBlue: "#95E0B8",
+        primaryBlue: "#94B1EC",
         highlightBrick: "#D18F83",
         primaryGreen: "#9CD950",
         abnormalRed: "#E3644D",
