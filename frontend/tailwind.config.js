@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       fontSize: {
         "heading-1": "32px",
-        "heading-2": "24px",
+        "heading-2": "20px",
       },
 
       fontFamily: {
