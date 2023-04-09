@@ -1,7 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import IconPage from "./pages/IconPage";
-import ExplicitDataPage from "./pages/ExplicitDataPage";
 import DefaultLayout from "./layouts/DefaultLayout";
+import ExplicitDataPage from "./pages/ExplicitDataPage";
+import BookingPage from "./pages/BookingPage";
+import BookingCalendarPage from "./pages/BookingCalendarPage";
 
 export default function WebRoutes() {
   return (
@@ -9,6 +11,10 @@ export default function WebRoutes() {
       <Route path="/" element={<IconPage />} />
       <Route path="/VitaGo" element={<DefaultLayout />}>
         <Route index element={<ExplicitDataPage />} />
+        <Route path="booking">
+          <Route index element={<BookingPage />} />
+          <Route path="calendar" element={<BookingCalendarPage />} />
+        </Route>
       </Route>
     </Routes>
   );

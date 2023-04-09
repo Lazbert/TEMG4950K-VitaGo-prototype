@@ -45,8 +45,6 @@ export const AddItemSection: React.FC<AddItemSectionProps> = ({
     const newList = list.filter(({ id: itemId }) => itemId != id);
     setList(newList);
   };
-
-  console.log(list);
   return (
     <div className="flex flex-col gap-[14px]">
       <div className="flex justify-between">

@@ -9,6 +9,7 @@ import { ReactComponent as IconUncheckedBox } from "@/assets/icons/IconUnchecked
 import { ReactComponent as IconImage } from "@/assets/icons/IconImage.svg";
 
 export default function ExplicitDataPage() {
+  const nav = useNavigate();
   const inputFields = [
     { title: "Sex", options: [{ label: "Male" }, { label: "Female" }] },
     {
@@ -29,7 +30,7 @@ export default function ExplicitDataPage() {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [checked, setChecked] = useState(false);
   return (
-    <div className="h-full flex flex-col gap-[9px] pt-[101px]">
+    <>
       <TitleSection
         title="VitaGo"
         titleMsg="Please provide the following information to proceed"
@@ -109,12 +110,15 @@ export default function ExplicitDataPage() {
                 VitaGo to receive better services
               </span>
             </div>
-            <button className="bg-highlightBrick text-white py-[22px] px-[106px] text-heading-2 font-bold rounded-[40px]">
+            <button
+              onClick={() => nav("booking")}
+              className="bg-highlightBrick text-white py-[22px] px-[106px] text-heading-2 font-bold rounded-[40px]"
+            >
               Continue
             </button>
           </div>
         </div>
       </ContentSection>
-    </div>
+    </>
   );
 }

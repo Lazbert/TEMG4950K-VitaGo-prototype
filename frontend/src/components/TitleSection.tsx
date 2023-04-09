@@ -4,7 +4,7 @@ import cx from "classnames";
 
 interface TitleSectionProps {
   title: string;
-  titleMsg: string;
+  titleMsg?: string;
   allowLastPage?: boolean;
 }
 
