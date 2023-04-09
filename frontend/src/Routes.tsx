@@ -3,7 +3,7 @@ import IconPage from "./pages/IconPage";
 import DefaultLayout from "./layouts/DefaultLayout";
 import ExplicitDataPage from "./pages/ExplicitDataPage";
 import BookingPage from "./pages/BookingPage";
-import BookingCalendarPage from "./pages/BookingCalendarPage";
+import BookingSelectedPage from "./pages/BookingSelectedPage";
 
 export default function WebRoutes() {
   return (
@@ -13,7 +13,7 @@ export default function WebRoutes() {
         <Route index element={<ExplicitDataPage />} />
         <Route path="booking">
           <Route index element={<BookingPage />} />
-          <Route path="calendar" element={<BookingCalendarPage />} />
+          <Route path="calendar" element={<BookingSelectedPage />} />
         </Route>
       </Route>
     </Routes>
