@@ -7,6 +7,7 @@ import AddItemSection from "../components/AddItemSection";
 import { ReactComponent as IconCheckedBox } from "@/assets/icons/IconCheckedBox.svg";
 import { ReactComponent as IconUncheckedBox } from "@/assets/icons/IconUncheckedBox.svg";
 import { ReactComponent as IconImage } from "@/assets/icons/IconImage.svg";
+import Checkbox from "../components/Checkbox";
 
 export default function ExplicitDataPage() {
   const nav = useNavigate();
@@ -93,18 +94,7 @@ export default function ExplicitDataPage() {
           </div>
           <div className="flex flex-col mt-[50px] gap-5">
             <div className="flex gap-2">
-              <div
-                className="pt-[2px]"
-                onClick={() => {
-                  setChecked(!checked);
-                }}
-              >
-                {checked ? (
-                  <IconCheckedBox className="w-[19px] h-[19px]" />
-                ) : (
-                  <IconUncheckedBox className="w-[19px] h-[19px]" />
-                )}
-              </div>
+              <Checkbox state={checked} onClick={() => setChecked(!checked)} />
               <span>
                 I agree to the collection of wearables and eHealth data by
                 VitaGo to receive better services

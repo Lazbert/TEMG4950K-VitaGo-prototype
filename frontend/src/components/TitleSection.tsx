@@ -26,7 +26,7 @@ export const TitleSection: React.FC<TitleSectionProps> = ({
         </div>
         <IconCross className="fill-white w-[40px] h-[40px]" />
       </div>
-      <span className="ml-[26px]">{titleMsg}</span>
+      <span className="ml-[26px] pr-1">{titleMsg}</span>
     </div>
   );
 };

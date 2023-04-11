@@ -78,7 +78,7 @@ export default function RecommendationsPage() {
           ))}
         </div>
         <button
-          onClick={() => nav("/delivery")}
+          onClick={() => nav("delivery")}
           className="absolute bottom-[24px] w-[307px] h-[70px] bg-highlightBrick text-white font-bold rounded-[40px]"
         >
           Continue

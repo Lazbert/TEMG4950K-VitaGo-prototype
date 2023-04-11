@@ -35,7 +35,7 @@ export default function MainPage() {
 
   return (
     <div className="flex">
-      <div className="flex-1 bg-cover bg-no-repeat bg-[url('/images/VitaGo_IconPage.png')]">
+      <div className="flex-1 bg-cover md:bg-contain bg-no-repeat bg-[url('/images/VitaGo_IconPage.png')]">
         <button
           onClick={demoStageHandler}
           className="absolute top-[319px] left-[172px]"
