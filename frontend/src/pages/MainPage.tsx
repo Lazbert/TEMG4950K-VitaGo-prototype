@@ -35,7 +35,7 @@ export default function MainPage() {
 
   return (
     <div className="flex">
-      <div className="flex-1 bg-no-repeat bg-[url('/images/VitaGo_IconPage.png')]">
+      <div className="flex-1 bg-cover bg-no-repeat bg-[url('/images/VitaGo_IconPage.png')]">
         <button
           onClick={demoStageHandler}
           className="absolute top-[319px] left-[172px]"
@@ -44,13 +44,13 @@ export default function MainPage() {
           <span className="font-semibold">VitaGo</span>
         </button>
       </div>
-      <div className="self-center invisible md:visible w-[40%] h-fit mr-10 p-6 flex flex-col items-center gap-5 bg-paleBlue">
+      <div className="rounded-[20px] self-center hidden md:visible w-[40%] h-fit mr-10 p-6 md:flex md:flex-col items-center gap-5 bg-paleBlue">
         <span className="w-full text-left text-[24px] underline font-bold">
           Demo-setting Panel
         </span>
-        <div className="text-left text-heading-2 font-bold w-full">
-          <span>Current stage: </span>
-          <span className="text-orange-400">{currentDemoStage}</span>
+        <div className="text-left text-heading-2 w-full">
+          <span className="font-medium">Current stage: </span>
+          <span className="text-orange-400 font-bold">{currentDemoStage}</span>
         </div>
         {demoStages.map((stage, key) => (
           <button
