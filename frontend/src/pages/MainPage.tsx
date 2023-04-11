@@ -18,11 +18,26 @@ export default function MainPage() {
     "Before 1st consultation"
   );
 
+  const demoStageHandler = () => {
+    switch (currentDemoStage) {
+      case "Before 1st consultation":
+        return nav("/VitaGo");
+      case "After 1st consultation":
+        return nav("/VitaGo/recommendations");
+      // case "Update explicit data":
+      //   return nav("/VitaGo");
+      // case "During subscription":
+      //   return nav("/VitaGo");
+      // case "New month of subscription":
+      //   return nav("/VitaGo");
+    }
+  };
+
   return (
     <div className="flex">
       <div className="flex-1 bg-no-repeat bg-[url('/images/VitaGo_IconPage.png')]">
         <button
-          onClick={() => nav("/VitaGo")}
+          onClick={demoStageHandler}
           className="absolute top-[319px] left-[172px]"
         >
           <IconVitaGo className="h-[48px] w-[48px]" />

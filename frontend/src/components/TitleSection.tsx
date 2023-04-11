@@ -14,17 +14,19 @@ export const TitleSection: React.FC<TitleSectionProps> = ({
   allowLastPage,
 }) => {
   return (
-    <div className="flex text-white gap-[9px] pl-[9.6px] pr-1">
-      <div className={cx("pt-[10px]", { invisible: !allowLastPage })}>
-        <IconArrowLeft className="w-[15.5px] h-[25px] inline-block" />
-      </div>
-      <div className="flex flex-col">
-        <span className="text-heading-1 font-bold">{title}</span>
-        <span>{titleMsg}</span>
-      </div>
-      <div className="pt-[6px]">
+    <div className="flex flex-col text-white pl-[9.6px] pr-1">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-[9px]">
+          <IconArrowLeft
+            className={cx("w-[15.5px] h-[25px] inline-block", {
+              invisible: !allowLastPage,
+            })}
+          />
+          <span className="text-heading-1 font-bold">{title}</span>
+        </div>
         <IconCross className="fill-white w-[40px] h-[40px]" />
       </div>
+      <span className="ml-[26px]">{titleMsg}</span>
     </div>
   );
 };

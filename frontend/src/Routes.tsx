@@ -4,6 +4,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import ExplicitDataPage from "./pages/ExplicitDataPage";
 import BookingPage from "./pages/BookingPage";
 import BookingSelectedPage from "./pages/BookingSelectedPage";
+import RecommendationsPage from "./pages/RecommendationsPage";
 
 export default function WebRoutes() {
   return (
@@ -14,6 +15,9 @@ export default function WebRoutes() {
         <Route path="booking">
           <Route index element={<BookingPage />} />
           <Route path="calendar" element={<BookingSelectedPage />} />
+        </Route>
+        <Route path="recommendations">
+          <Route index element={<RecommendationsPage />} />
         </Route>
       </Route>
     </Routes>
