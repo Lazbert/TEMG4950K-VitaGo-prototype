@@ -6,6 +6,8 @@ import BookingPage from "./pages/BookingPage";
 import BookingSelectedPage from "./pages/BookingSelectedPage";
 import RecommendationsPage from "./pages/RecommendationsPage";
 import DeliveryPage from "./pages/DeliveryPage";
+import PaymentPage from "./pages/PaymentPage";
+import SuccessfulPaymentPage from "./pages/SuccessfulPaymentPage";
 
 export default function WebRoutes() {
   return (
@@ -20,6 +22,10 @@ export default function WebRoutes() {
         <Route path="recommendations">
           <Route index element={<RecommendationsPage />} />
           <Route path="delivery" element={<DeliveryPage />} />
+          <Route path="payment">
+            <Route index element={<PaymentPage />} />
+            <Route path="success" element={<SuccessfulPaymentPage />} />
+          </Route>
         </Route>
       </Route>
     </Routes>

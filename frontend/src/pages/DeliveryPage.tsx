@@ -70,9 +70,7 @@ export default function DeliveryPage() {
         </div>
         <div className="flex flex-col gap-[26px]">
           <ContinueButton
-            onClick={() => {
-              return;
-            }}
+            onClick={() => nav("/VitaGo/recommendations/payment")}
           />
           <button className="font-bold text-primaryBlue">
             Edit delivery profile
