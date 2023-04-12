@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import TitleSection from "../components/TitleSection";
 import ContentSection from "../components/ContentSection";
 import DataInput from "../components/DataInput";
 import AddItemSection from "../components/AddItemSection";
-import { ReactComponent as IconCheckedBox } from "@/assets/icons/IconCheckedBox.svg";
-import { ReactComponent as IconUncheckedBox } from "@/assets/icons/IconUncheckedBox.svg";
 import { ReactComponent as IconImage } from "@/assets/icons/IconImage.svg";
 import Checkbox from "../components/Checkbox";
+import cx from "classnames";
 
 export default function ExplicitDataPage() {
   const nav = useNavigate();
+  const stage = useLocation().state?.stage;
   const inputFields = [
     { title: "Sex", options: [{ label: "Male" }, { label: "Female" }] },
     {
@@ -39,7 +39,7 @@ export default function ExplicitDataPage() {
       />
       <ContentSection>
         <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-[14px]">
+          <div className={cx("flex flex-col gap-[14px]", { hidden: stage })}>
             <span className="text-heading-2 text-highlightBrick font-bold">
               Personal Information
             </span>
@@ -49,6 +49,7 @@ export default function ExplicitDataPage() {
             ))}
           </div>
           <AddItemSection
+            className={cx({ hidden: stage })}
             title="My Health Records"
             placeholder="Disease / Allergy"
             list={healthHistory}
@@ -93,7 +94,7 @@ export default function ExplicitDataPage() {
             />
           </div>
           <div className="flex flex-col mt-[50px] gap-5">
-            <div className="flex gap-2">
+            <div className={cx("flex gap-2", { invisible: stage })}>
               <Checkbox state={checked} onClick={() => setChecked(!checked)} />
               <span>
                 I agree to the collection of wearables and eHealth data by

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as IconVitaGo } from "@/assets/icons/IconVitaGo.svg";
 import { useState } from "react";
+import LockScreenPage from "./LockScreenPage";
 
 const demoStages = [
   "Before 1st consultation",
@@ -24,10 +25,6 @@ export default function MainPage() {
         return nav("/VitaGo");
       case "After 1st consultation":
         return nav("/VitaGo/recommendations");
-      // case "Update explicit data":
-      //   return nav("/VitaGo");
-      // case "During subscription":
-      //   return nav("/VitaGo");
       // case "New month of subscription":
       //   return nav("/VitaGo");
     }
@@ -35,16 +32,22 @@ export default function MainPage() {
 
   return (
     <div className="flex">
-      <div className="flex-1 bg-cover md:bg-contain bg-no-repeat bg-[url('/images/VitaGo_IconPage.png')]">
-        <button
-          onClick={demoStageHandler}
-          className="absolute top-[319px] left-[172px]"
-        >
-          <IconVitaGo className="h-[48px] w-[48px]" />
-          <span className="font-semibold">VitaGo</span>
-        </button>
-      </div>
-      <div className="rounded-[20px] self-center hidden md:visible w-[40%] h-fit mr-10 p-6 md:flex md:flex-col items-center gap-5 bg-paleBlue">
+      {currentDemoStage != "Update explicit data" &&
+      currentDemoStage != "During subscription" ? (
+        <div className="flex-1 bg-cover md:bg-contain bg-no-repeat bg-[url('/images/VitaGo_IconPage.png')]">
+          <button
+            onClick={demoStageHandler}
+            className="absolute top-[319px] left-[172px]"
+          >
+            <IconVitaGo className="h-[48px] w-[48px]" />
+            <span className="font-semibold">VitaGo</span>
+          </button>
+        </div>
+      ) : (
+        <LockScreenPage />
+      )}
+
+      <div className="rounded-[20px] self-center hidden md:visible w-[40%] mr-10 ml-10 h-fit p-6 md:flex md:flex-col items-center gap-5 bg-paleBlue">
         <span className="w-full text-left text-[24px] underline font-bold">
           Demo-setting Panel
         </span>

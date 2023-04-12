@@ -3,6 +3,9 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    backgroundImage: {
+      "gradient-slanted": "linear-gradient(160deg, var(--tw-gradient-stops))",
+    },
     extend: {
       fontSize: {
         "heading-1": "32px",

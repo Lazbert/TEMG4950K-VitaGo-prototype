@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ReactComponent as IconAdd } from "@/assets/icons/IconAdd.svg";
 import { ReactComponent as IconTick } from "@/assets/icons/IconTick.svg";
 import { ReactComponent as IconCross } from "@/assets/icons/IconCross.svg";
+import cx from "classnames";
 
 interface AddItemSectionProps {
   title: string;
@@ -11,6 +12,7 @@ interface AddItemSectionProps {
   setList: React.Dispatch<
     React.SetStateAction<Array<{ id: number; label: string }>>
   >;
+  className?: string;
 }
 
 export const AddItemSection: React.FC<AddItemSectionProps> = ({
@@ -19,6 +21,7 @@ export const AddItemSection: React.FC<AddItemSectionProps> = ({
   placeholder,
   list,
   setList,
+  className,
 }) => {
   const [isAddItem, setIsAddItem] = useState(false);
   const [inputItem, setInputItem] = useState<{
@@ -46,7 +49,7 @@ export const AddItemSection: React.FC<AddItemSectionProps> = ({
     setList(newList);
   };
   return (
-    <div className="flex flex-col gap-[14px]">
+    <div className={cx("flex flex-col gap-[14px]", className)}>
       <div className="flex justify-between">
         <span className="text-heading-2 text-highlightBrick font-bold">
           {title} <span className="text-[12px]">{titleRemark}</span>
