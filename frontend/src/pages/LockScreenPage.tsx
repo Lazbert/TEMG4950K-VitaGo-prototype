@@ -1,5 +1,5 @@
 import LockedTopSection from "@/assets/images/IOS-lockedTopSection.png";
-import LockedBottomSection from "@/assets/images/IOS-LockedBottomSection.png";
+import LockedBottomSection from "@/assets/images/IOS-lockedBottomSection.png";
 import Notification from "../components/Notification";
 import { useNavigate } from "react-router-dom";
 
