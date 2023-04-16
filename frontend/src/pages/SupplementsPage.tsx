@@ -3,6 +3,7 @@ import TitleSection from "../components/TitleSection";
 import SupplementDisplay, {
   SupplementDisplayProps,
 } from "../components/SupplementDisplay";
+import { ReactComponent as IconConsultButton } from "@/assets/icons/IconConsultButton.svg";
 import { ReactComponent as Blackmores } from "@/assets/images/Blackmores.svg";
 import { ReactComponent as NordicNaturals } from "@/assets/images/NordicNaturals.svg";
 import { ReactComponent as NatureMade } from "@/assets/images/NatureMade.svg";
@@ -77,6 +78,9 @@ export default function SupplementsPage() {
           })}
         </div>
       </ContentSection>
+      <button className="shadow-xl shadow-grey/30 absolute right-[15px] bottom-[15px] w-[75px] h-[75px] rounded-full bg-highlightBrick">
+        <IconConsultButton className="mx-auto my-auto h-[57px] w-[57px]" />
+      </button>
     </>
   );
 }
