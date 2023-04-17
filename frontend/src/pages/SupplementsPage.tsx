@@ -13,7 +13,7 @@ import { ReactComponent as NaturesWay } from "@/assets/images/NaturesWay.svg";
 import { ReactComponent as IconRemove } from "@/assets/icons/IconRemove.svg";
 import { ReactComponent as IconTimer } from "@/assets/icons/IconTimer.svg";
 
-const supplements: Array<Pick<SupplementDisplayProps, "suppInfo">> = [
+const originalSupplements: Array<Pick<SupplementDisplayProps, "suppInfo">> = [
   {
     suppInfo: {
       name: "Multivitamins",
@@ -65,34 +65,31 @@ export default function SupplementsPage() {
   const [onConfirm, setOnConfirm] = useState(false);
   const [isSelectMode, setIsSelectMode] = useState(false);
   const [selectingSupp, setSelectingSupp] = useState<Array<string>>([]);
-  const defaultSupp: Array<{ name: string; isSelected: boolean }> =
-    supplements.map(({ suppInfo }) => {
-      const { name } = suppInfo;
-      return { name: name, isSelected: false };
-    });
-  const [confirmSelectedSupp, setConfirmSelectedSupp] = useState<
-    Array<{
-      name: string;
-      isSelected: boolean;
-    }>
-  >(defaultSupp);
+  const [suppList, setSuppList] = useState(originalSupplements);
+  const [droppedSupp, setDroppedSupp] = useState<
+    Array<Pick<SupplementDisplayProps, "suppInfo">>
+  >([]);
 
-  const confirmSelectionHandler = () => {
-    // selectingSupp.forEach((name) => {
-    //   const updated = confirmSelectedSupp;
-    //   updated.map((supp) => {
-    //     if (supp.name == name) {
-    //       supp.isSelected = true;
-    //     }
-    //   });
-    //   setConfirmSelectedSupp(updated);
-    // });
+  const removeSelectedHandler = () => {
+    const updated = suppList.filter(
+      (supp) => !selectingSupp.includes(supp.suppInfo.name)
+    );
+    const dropped = suppList.filter((supp) =>
+      selectingSupp.includes(supp.suppInfo.name)
+    );
+    setSuppList(updated);
+    setSelectingSupp([]);
+    setDroppedSupp(dropped);
+    setOnConfirm(false);
+    setIsSelectMode(false);
   };
+
+  console.log(suppList);
 
   return (
     <>
       <TitleSection title="Supplements" allowLastPage />
-      <ContentSection className="h-full px-[15px]" overflow>
+      <ContentSection className="h-full !px-[15px]" overflow>
         <div className="flex flex-col px-[19px]">
           <div className="flex justify-between items-center">
             <span className="text-heading-2 font-bold">2023 March</span>
@@ -100,8 +97,11 @@ export default function SupplementsPage() {
               {isSelectMode ? (
                 <button
                   onClick={() => {
+                    if (selectingSupp.length == 0) {
+                      setIsSelectMode(false);
+                      return;
+                    }
                     setOnConfirm(true);
-                    setIsSelectMode(false);
                   }}
                   className="bg-primaryGreen py-1 min-w-[85px] rounded-[20px] text-white"
                 >
@@ -125,7 +125,7 @@ export default function SupplementsPage() {
           </span>
         </div>
         <div className="mt-[15px] grid grid-cols-2 gap-[15px]">
-          {supplements.map((supp, ind) => {
+          {suppList.map((supp, ind) => {
             const isEvenRow = Math.floor(ind / 2) % 2 == 0;
             return (
               <SupplementDisplay
@@ -146,7 +146,10 @@ export default function SupplementsPage() {
       {onConfirm && (
         <div className="inset-0 absolute bg-black/80 h-screen w-screen flex flex-col justify-end items-center pb-[15px] gap-[10px]">
           <div className="rounded-[30px] bg-white w-[363px] flex flex-col gap-[11px] p-[18px]">
-            <button className="flex gap-[5px] items-center">
+            <button
+              onClick={removeSelectedHandler}
+              className="flex gap-[5px] items-center"
+            >
               <IconRemove className="w-[40px] h-[40px]" />
               <span className="text-heading-2">Remove selected</span>
             </button>
@@ -157,7 +160,10 @@ export default function SupplementsPage() {
             </button>
           </div>
           <button
-            onClick={() => setOnConfirm(false)}
+            onClick={() => {
+              setOnConfirm(false);
+              setIsSelectMode(false);
+            }}
             className="w-[363px] h-[58px] bg-white text-center rounded-[20px]"
           >
             <span className="text-heading-2 font-bold text-primaryBlue">

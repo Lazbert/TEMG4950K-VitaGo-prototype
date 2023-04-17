@@ -59,16 +59,16 @@ export const SupplementDisplay: React.FC<SupplementDisplayProps> = ({
             onClick={() => {
               setSelectingSupp(selectingSupp.filter((i) => i != name));
             }}
-            className="top-2 right-2 bg-primaryBlue absolute w-[25px] h-[25px] rounded-full"
+            className="top-2 right-2 bg-primaryBlue absolute w-[28px] h-[28px] rounded-full"
           >
-            <IconSmallTick className="mx-auto my-auto w-[19px] h-[19px]" />
+            <IconSmallTick className="mx-auto my-auto w-[21px] h-[21px]" />
           </button>
         ) : (
           <button
             onClick={() => {
               setSelectingSupp([...selectingSupp, name]);
             }}
-            className="top-2 right-2 bg-white absolute border border-primaryBlue w-[25px] h-[25px] rounded-full"
+            className="top-2 right-2 bg-white absolute border border-primaryBlue w-[28px] h-[28px] rounded-full"
           ></button>
         ))}
     </div>
