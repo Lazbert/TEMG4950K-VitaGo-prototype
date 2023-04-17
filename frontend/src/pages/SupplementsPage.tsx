@@ -70,6 +70,12 @@ export default function SupplementsPage() {
     Array<Pick<SupplementDisplayProps, "suppInfo">>
   >([]);
 
+  const setDefaultStates = () => {
+    setOnConfirm(false);
+    setIsSelectMode(false);
+    setSelectingSupp([]);
+  };
+
   const removeSelectedHandler = () => {
     const updated = suppList.filter(
       (supp) => !selectingSupp.includes(supp.suppInfo.name)
@@ -78,13 +84,20 @@ export default function SupplementsPage() {
       selectingSupp.includes(supp.suppInfo.name)
     );
     setSuppList(updated);
-    setSelectingSupp([]);
     setDroppedSupp(dropped);
-    setOnConfirm(false);
-    setIsSelectMode(false);
+    setDefaultStates();
   };
 
-  console.log(suppList);
+  const resetSelectedTimerHandler = () => {
+    const updated = suppList;
+    updated.forEach((supp) => {
+      if (selectingSupp.includes(supp.suppInfo.name)) {
+        supp.suppInfo.timer = "23:59:59";
+      }
+    });
+    setSuppList(updated);
+    setDefaultStates();
+  };
 
   return (
     <>
@@ -154,7 +167,10 @@ export default function SupplementsPage() {
               <span className="text-heading-2">Remove selected</span>
             </button>
             <div className="border" />
-            <button className="flex gap-[5px] items-center">
+            <button
+              onClick={resetSelectedTimerHandler}
+              className="flex gap-[5px] items-center"
+            >
               <IconTimer className="w-[40px] h-[40px]" />
               <span className="text-heading-2">Reset timers of selected</span>
             </button>
