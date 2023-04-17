@@ -1,27 +1,33 @@
 import { ReactComponent as IconRightArrow } from "@/assets/icons/IconRightArrow.svg";
+import { ReactComponent as IconSmallTick } from "@/assets/icons/IconSmallTick.svg";
 import cx from "classnames";
 
 export interface SupplementDisplayProps {
-  Display: React.FunctionComponent<
-    React.SVGProps<SVGSVGElement> & {
-      title?: string | undefined;
-    }
-  >;
-  displayClassName: string;
-  name: string;
-  frequency: string;
+  suppInfo: {
+    Display: React.FunctionComponent<
+      React.SVGProps<SVGSVGElement> & {
+        title?: string | undefined;
+      }
+    >;
+    displayClassName: string;
+    name: string;
+    frequency: string;
+    timer: string;
+  };
   isEvenRow: boolean;
-  timer: string;
+  isSelectMode: boolean;
+  selectingSupp: Array<string>;
+  setSelectingSupp: React.Dispatch<React.SetStateAction<Array<string>>>;
 }
 
 export const SupplementDisplay: React.FC<SupplementDisplayProps> = ({
-  Display,
-  displayClassName,
-  name,
-  frequency,
+  suppInfo,
   isEvenRow,
-  timer,
+  isSelectMode,
+  selectingSupp,
+  setSelectingSupp,
 }) => {
+  const { Display, displayClassName, frequency, name, timer } = suppInfo;
   return (
     <div
       className={cx(
@@ -47,6 +53,24 @@ export const SupplementDisplay: React.FC<SupplementDisplayProps> = ({
           {timer}
         </span>
       </div>
+      {isSelectMode &&
+        (selectingSupp.includes(name) ? (
+          <button
+            onClick={() => {
+              setSelectingSupp(selectingSupp.filter((i) => i != name));
+            }}
+            className="top-2 right-2 bg-primaryBlue absolute w-[25px] h-[25px] rounded-full"
+          >
+            <IconSmallTick className="mx-auto my-auto w-[19px] h-[19px]" />
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              setSelectingSupp([...selectingSupp, name]);
+            }}
+            className="top-2 right-2 bg-white absolute border border-primaryBlue w-[25px] h-[25px] rounded-full"
+          ></button>
+        ))}
     </div>
   );
 };
