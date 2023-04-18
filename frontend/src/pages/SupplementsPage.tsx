@@ -9,17 +9,24 @@ import { ReactComponent as IconRemove } from "@/assets/icons/IconRemove.svg";
 import { ReactComponent as IconTimer } from "@/assets/icons/IconTimer.svg";
 import { ReactComponent as IconDashboard } from "@/assets/icons/IconDashboard.svg";
 import { ReactComponent as IconPastSupplements } from "@/assets/icons/IconPastSupplements.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { originalSupplements } from "./utils";
 import cx from "classnames";
 
 export default function SupplementsPage() {
   const nav = useNavigate();
+  const state: { suppList: Array<string> } = useLocation().state;
   const [onConfirm, setOnConfirm] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [isSelectMode, setIsSelectMode] = useState(false);
   const [selectingSupp, setSelectingSupp] = useState<Array<string>>([]);
-  const [suppList, setSuppList] = useState(originalSupplements);
+  const [suppList, setSuppList] = useState(
+    state.suppList
+      ? originalSupplements.filter((supp) =>
+          state.suppList.includes(supp.suppInfo.name)
+        )
+      : originalSupplements
+  );
   const [droppedSupp, setDroppedSupp] = useState<Array<string>>([]);
 
   const setDefaultStates = () => {
@@ -96,19 +103,35 @@ export default function SupplementsPage() {
           </span>
         </div>
         <div className="mt-[15px] grid grid-cols-2 gap-[15px]">
-          {suppList.map((supp, ind) => {
-            const isEvenRow = Math.floor(ind / 2) % 2 == 0;
-            return (
-              <SupplementDisplay
-                key={ind}
-                isSelectMode={isSelectMode}
-                selectingSupp={selectingSupp}
-                setSelectingSupp={setSelectingSupp}
-                isEvenRow={isEvenRow}
-                {...supp}
-              />
-            );
-          })}
+          {state?.suppList
+            ? suppList
+                .filter((supp) => state.suppList.includes(supp.suppInfo.name))
+                .map((supp, ind) => {
+                  const isEvenRow = Math.floor(ind / 2) % 2 == 0;
+                  return (
+                    <SupplementDisplay
+                      key={ind}
+                      isSelectMode={isSelectMode}
+                      selectingSupp={selectingSupp}
+                      setSelectingSupp={setSelectingSupp}
+                      isEvenRow={isEvenRow}
+                      {...supp}
+                    />
+                  );
+                })
+            : suppList.map((supp, ind) => {
+                const isEvenRow = Math.floor(ind / 2) % 2 == 0;
+                return (
+                  <SupplementDisplay
+                    key={ind}
+                    isSelectMode={isSelectMode}
+                    selectingSupp={selectingSupp}
+                    setSelectingSupp={setSelectingSupp}
+                    isEvenRow={isEvenRow}
+                    {...supp}
+                  />
+                );
+              })}
         </div>
       </ContentSection>
       <button className="shadow-xl shadow-grey/30 absolute right-[15px] bottom-[15px] w-[75px] h-[75px] rounded-full bg-highlightBrick">
@@ -155,7 +178,11 @@ export default function SupplementsPage() {
           <div className="border-t w-[95%] border-primaryBlue"></div>
           <button
             onClick={() => {
-              nav("history", { state: { dropped: droppedSupp } });
+              nav("history", {
+                state: {
+                  remaining: suppList.map((supp) => supp.suppInfo.name),
+                },
+              });
             }}
             className="flex items-center gap-[5px]"
           >
