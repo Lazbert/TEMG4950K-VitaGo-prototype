@@ -9,6 +9,12 @@ import { ReactComponent as John } from "@/assets/images/John.svg";
 import { ReactComponent as IconTemperature } from "@/assets/icons/IconTemperature.svg";
 import { ReactComponent as IconExercise } from "@/assets/icons/IconExercise.svg";
 import { ReactComponent as IconSteps } from "@/assets/icons/IconSteps.svg";
+import { ReactComponent as IconSleep } from "@/assets/icons/IconSleep.svg";
+import { ReactComponent as IconHeartRate } from "@/assets/icons/IconHeartRate.svg";
+import {
+  ShortDashboardItem,
+  ShortDashboardItemProps,
+} from "../components/ShortDashboardItem";
 
 const longDashboardItems: Array<LongDashboardItemProps> = [
   {
@@ -46,11 +52,30 @@ const longDashboardItems: Array<LongDashboardItemProps> = [
   },
 ];
 
+const shortDashboardItem: Array<ShortDashboardItemProps> = [
+  {
+    title: "Sleep",
+    Icon: IconSleep,
+    iconClassName: "w-[30px] h-[33px]",
+    stat: 7.8,
+    statClassName: "text-normalGreen",
+    unit: "hours",
+  },
+  {
+    title: "Heart Rate",
+    Icon: IconHeartRate,
+    iconClassName: "w-[30px] h-[33px]",
+    stat: 85,
+    statClassName: "text-normalGreen",
+    unit: "bpm",
+  },
+];
+
 export default function HealthDashboardPage() {
   return (
     <>
       <TitleSection title="Health Dashboard" allowLastPage />
-      <ContentSection className="h-full">
+      <ContentSection className="h-full" overflow>
         <PersonalProfile
           ProfilePic={John}
           age={22}
@@ -61,8 +86,13 @@ export default function HealthDashboardPage() {
         />
         <div className="w-full border-t border-grey/30 my-[15px]"></div>
         <div className="flex flex-col gap-5 items-center">
-          {longDashboardItems.map((item) => (
-            <LongDashboardItem {...item} />
+          {longDashboardItems.map((item, key) => (
+            <LongDashboardItem key={key} {...item} />
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-[18px] mt-5">
+          {shortDashboardItem.map((item, key) => (
+            <ShortDashboardItem key={key} {...item} />
           ))}
         </div>
       </ContentSection>
