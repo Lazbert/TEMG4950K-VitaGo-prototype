@@ -7,7 +7,8 @@ const demoStages = [
   "Before 1st consultation",
   "After 1st consultation",
   "Update explicit data",
-  "During subscription",
+  "Abnormality detection",
+  "Time to take supplements",
   "New month of subscription",
 ];
 
@@ -33,7 +34,8 @@ export default function MainPage() {
   return (
     <div className="flex">
       {currentDemoStage != "Update explicit data" &&
-      currentDemoStage != "During subscription" ? (
+      currentDemoStage != "Abnormality detection" &&
+      currentDemoStage != "Time to take supplements" ? (
         <div className="flex-1 bg-cover md:bg-contain bg-no-repeat bg-[url('/images/VitaGo_IconPage.png')]">
           <button
             onClick={demoStageHandler}
@@ -44,10 +46,10 @@ export default function MainPage() {
           </button>
         </div>
       ) : (
-        <LockScreenPage />
+        <LockScreenPage demoStage={currentDemoStage} />
       )}
 
-      <div className="rounded-[20px] self-center hidden md:visible w-[40%] mr-10 ml-10 h-fit p-6 md:flex md:flex-col items-center gap-5 bg-paleBlue">
+      <div className="rounded-[20px] self-center hidden md:visible w-[40%] mx-10 h-fit p-6 md:flex md:flex-col items-center gap-5 bg-paleBlue">
         <span className="w-full text-left text-[24px] underline font-bold">
           Demo-setting Panel
         </span>

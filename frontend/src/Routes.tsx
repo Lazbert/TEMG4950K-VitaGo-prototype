@@ -8,6 +8,8 @@ import RecommendationsPage from "./pages/RecommendationsPage";
 import DeliveryPage from "./pages/DeliveryPage";
 import PaymentPage from "./pages/PaymentPage";
 import SuccessfulPaymentPage from "./pages/SuccessfulPaymentPage";
+import SupplementsPage from "./pages/SupplementsPage";
+import PastSupplementsPage from "./pages/PastSupplementsPage";
 
 export default function WebRoutes() {
   return (
@@ -26,6 +28,10 @@ export default function WebRoutes() {
             <Route index element={<PaymentPage />} />
             <Route path="success" element={<SuccessfulPaymentPage />} />
           </Route>
+        </Route>
+        <Route path="supplements">
+          <Route index element={<SupplementsPage />} />
+          <Route path="history" element={<PastSupplementsPage />} />
         </Route>
       </Route>
     </Routes>
