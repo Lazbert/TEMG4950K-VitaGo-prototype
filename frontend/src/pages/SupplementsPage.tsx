@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 import ContentSection from "../components/ContentSection";
 import TitleSection from "../components/TitleSection";
 import SupplementDisplay, {
@@ -9,11 +9,9 @@ import { ReactComponent as IconRemove } from "@/assets/icons/IconRemove.svg";
 import { ReactComponent as IconTimer } from "@/assets/icons/IconTimer.svg";
 import { ReactComponent as IconDashboard } from "@/assets/icons/IconDashboard.svg";
 import { ReactComponent as IconPastSupplements } from "@/assets/icons/IconPastSupplements.svg";
-import cx from "classnames";
 import { useNavigate } from "react-router-dom";
 import { originalSupplements } from "./utils";
-
-const SuppContext = createContext(originalSupplements);
+import cx from "classnames";
 
 export default function SupplementsPage() {
   const nav = useNavigate();
