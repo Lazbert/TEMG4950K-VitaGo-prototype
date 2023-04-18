@@ -1,74 +1,28 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import ContentSection from "../components/ContentSection";
 import TitleSection from "../components/TitleSection";
 import SupplementDisplay, {
   SupplementDisplayProps,
 } from "../components/SupplementDisplay";
 import { ReactComponent as IconConsultButton } from "@/assets/icons/IconConsultButton.svg";
-import { ReactComponent as Blackmores } from "@/assets/images/Blackmores.svg";
-import { ReactComponent as NordicNaturals } from "@/assets/images/NordicNaturals.svg";
-import { ReactComponent as NatureMade } from "@/assets/images/NatureMade.svg";
-import { ReactComponent as BioGaia } from "@/assets/images/BioGaia.svg";
-import { ReactComponent as NaturesWay } from "@/assets/images/NaturesWay.svg";
 import { ReactComponent as IconRemove } from "@/assets/icons/IconRemove.svg";
 import { ReactComponent as IconTimer } from "@/assets/icons/IconTimer.svg";
+import { ReactComponent as IconDashboard } from "@/assets/icons/IconDashboard.svg";
+import { ReactComponent as IconPastSupplements } from "@/assets/icons/IconPastSupplements.svg";
+import cx from "classnames";
+import { useNavigate } from "react-router-dom";
+import { originalSupplements } from "./utils";
 
-const originalSupplements: Array<Pick<SupplementDisplayProps, "suppInfo">> = [
-  {
-    suppInfo: {
-      name: "Multivitamins",
-      Display: Blackmores,
-      displayClassName: "w-[80px] h-[119px]",
-      frequency: "Daily, 1 time a day",
-      timer: "Now",
-    },
-  },
-  {
-    suppInfo: {
-      name: "Omega-3",
-      Display: NordicNaturals,
-      displayClassName: "w-[85px] h-[122px]",
-      frequency: "Daily, 1 time a day",
-      timer: "Now",
-    },
-  },
-  {
-    suppInfo: {
-      name: "Vitamin D",
-      Display: NatureMade,
-      displayClassName: "w-[76px] h-[131px]",
-      frequency: "Daily, 1 time a day",
-      timer: "15:00:00",
-    },
-  },
-  {
-    suppInfo: {
-      name: "Probiotics",
-      Display: BioGaia,
-      displayClassName: "w-[101px] h-[121px]",
-      frequency: "Daily, 1 time a day",
-      timer: "15:00:00",
-    },
-  },
-  {
-    suppInfo: {
-      name: "Calcium",
-      Display: NaturesWay,
-      displayClassName: "w-[77px] h-[129px]",
-      frequency: "Daily, 1 time a day",
-      timer: "14:00:00",
-    },
-  },
-];
+const SuppContext = createContext(originalSupplements);
 
 export default function SupplementsPage() {
+  const nav = useNavigate();
   const [onConfirm, setOnConfirm] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
   const [isSelectMode, setIsSelectMode] = useState(false);
   const [selectingSupp, setSelectingSupp] = useState<Array<string>>([]);
   const [suppList, setSuppList] = useState(originalSupplements);
-  const [droppedSupp, setDroppedSupp] = useState<
-    Array<Pick<SupplementDisplayProps, "suppInfo">>
-  >([]);
+  const [droppedSupp, setDroppedSupp] = useState<Array<string>>([]);
 
   const setDefaultStates = () => {
     setOnConfirm(false);
@@ -80,9 +34,9 @@ export default function SupplementsPage() {
     const updated = suppList.filter(
       (supp) => !selectingSupp.includes(supp.suppInfo.name)
     );
-    const dropped = suppList.filter((supp) =>
-      selectingSupp.includes(supp.suppInfo.name)
-    );
+    const dropped = suppList
+      .filter((supp) => selectingSupp.includes(supp.suppInfo.name))
+      .map((item) => item.suppInfo.name);
     setSuppList(updated);
     setDroppedSupp(dropped);
     setDefaultStates();
@@ -128,7 +82,13 @@ export default function SupplementsPage() {
                   Select
                 </button>
               )}
-              <button className="pb-2 w-[33px] text-center rounded-full border border-primaryBlue">
+              <button
+                onClick={() => setShowOptions(!showOptions)}
+                className={cx(
+                  "pb-2 w-[33px] text-center rounded-full border border-primaryBlue",
+                  { "text-white bg-primaryBlue": showOptions }
+                )}
+              >
                 ...
               </button>
             </div>
@@ -185,6 +145,24 @@ export default function SupplementsPage() {
             <span className="text-heading-2 font-bold text-primaryBlue">
               Cancel
             </span>
+          </button>
+        </div>
+      )}
+      {showOptions && (
+        <div className="top-[220px] right-[30px] rounded-[20px] absolute p-3 gap-[10px] border border-primaryBlue bg-white flex flex-col justify-center items-center">
+          <button className="flex items-center gap-[5px]">
+            <IconDashboard className="w-[30px] h-[30px]" />
+            <span className="text-[16px]">Health Dashboard</span>
+          </button>
+          <div className="border-t w-[95%] border-primaryBlue"></div>
+          <button
+            onClick={() => {
+              nav("history", { state: { dropped: droppedSupp } });
+            }}
+            className="flex items-center gap-[5px]"
+          >
+            <IconPastSupplements className="w-[39px] h-[39px]" />
+            <span className="text-[16px]">Past Supplements</span>
           </button>
         </div>
       )}

@@ -4,11 +4,12 @@ import cx from "classnames";
 
 export interface SupplementDisplayProps {
   suppInfo: {
-    Display: React.FunctionComponent<
+    Display?: React.FunctionComponent<
       React.SVGProps<SVGSVGElement> & {
         title?: string | undefined;
       }
     >;
+    brand: string;
     displayClassName: string;
     name: string;
     frequency: string;
@@ -38,7 +39,7 @@ export const SupplementDisplay: React.FC<SupplementDisplayProps> = ({
         }
       )}
     >
-      <Display className={displayClassName} />
+      {Display && <Display className={displayClassName} />}
       <div className="px-[10px] py-1 w-full bg-white flex flex-col justify-center rounded-[10px]">
         <div className="flex justify-between">
           <span className="font-medium">{name}</span>
