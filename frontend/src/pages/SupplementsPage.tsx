@@ -4,7 +4,6 @@ import TitleSection from "../components/TitleSection";
 import SupplementDisplay, {
   SupplementDisplayProps,
 } from "../components/SupplementDisplay";
-import { ReactComponent as IconConsultButton } from "@/assets/icons/IconConsultButton.svg";
 import { ReactComponent as IconRemove } from "@/assets/icons/IconRemove.svg";
 import { ReactComponent as IconTimer } from "@/assets/icons/IconTimer.svg";
 import { ReactComponent as IconDashboard } from "@/assets/icons/IconDashboard.svg";
@@ -12,6 +11,7 @@ import { ReactComponent as IconPastSupplements } from "@/assets/icons/IconPastSu
 import { useLocation, useNavigate } from "react-router-dom";
 import { originalSupplements } from "./utils";
 import cx from "classnames";
+import ConsultButton from "../components/ConsultButton";
 
 export default function SupplementsPage() {
   const nav = useNavigate();
@@ -21,7 +21,7 @@ export default function SupplementsPage() {
   const [isSelectMode, setIsSelectMode] = useState(false);
   const [selectingSupp, setSelectingSupp] = useState<Array<string>>([]);
   const [suppList, setSuppList] = useState(
-    state.suppList
+    state?.suppList
       ? originalSupplements.filter((supp) =>
           state.suppList.includes(supp.suppInfo.name)
         )
@@ -134,9 +134,7 @@ export default function SupplementsPage() {
               })}
         </div>
       </ContentSection>
-      <button className="shadow-xl shadow-grey/30 absolute right-[15px] bottom-[15px] w-[75px] h-[75px] rounded-full bg-highlightBrick">
-        <IconConsultButton className="mx-auto my-auto h-[57px] w-[57px]" />
-      </button>
+      <ConsultButton />
       {onConfirm && (
         <div className="inset-0 absolute bg-black/80 h-screen w-screen flex flex-col justify-end items-center pb-[15px] gap-[10px]">
           <div className="rounded-[30px] bg-white w-[363px] flex flex-col gap-[11px] p-[18px]">
@@ -171,7 +169,10 @@ export default function SupplementsPage() {
       )}
       {showOptions && (
         <div className="top-[220px] right-[30px] rounded-[20px] absolute p-3 gap-[10px] border border-primaryBlue bg-white flex flex-col justify-center items-center">
-          <button className="flex items-center gap-[5px]">
+          <button
+            onClick={() => nav("/VitaGo/dashboard")}
+            className="flex items-center gap-[5px]"
+          >
             <IconDashboard className="w-[30px] h-[30px]" />
             <span className="text-[16px]">Health Dashboard</span>
           </button>

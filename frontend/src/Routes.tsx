@@ -10,6 +10,7 @@ import PaymentPage from "./pages/PaymentPage";
 import SuccessfulPaymentPage from "./pages/SuccessfulPaymentPage";
 import SupplementsPage from "./pages/SupplementsPage";
 import PastSupplementsPage from "./pages/PastSupplementsPage";
+import HealthDashboardPage from "./pages/HealthDashboardPage";
 
 export default function WebRoutes() {
   return (
@@ -33,6 +34,7 @@ export default function WebRoutes() {
           <Route index element={<SupplementsPage />} />
           <Route path="history" element={<PastSupplementsPage />} />
         </Route>
+        <Route path="dashboard" element={<HealthDashboardPage />} />
       </Route>
     </Routes>
   );
