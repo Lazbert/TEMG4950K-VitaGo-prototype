@@ -17,6 +17,8 @@ export const originalSupplements: Array<
       displayClassName: "w-[80px] h-[119px]",
       frequency: "Daily, 1 time a day",
       timer: "Now",
+      description:
+        "Supplement the inadequate nutrients from imbalanced diet. One-a-day formula with 20 essential nutrients",
     },
   },
   {

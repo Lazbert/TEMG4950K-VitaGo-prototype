@@ -14,6 +14,7 @@ export interface SupplementDisplayProps {
     name: string;
     frequency: string;
     timer: string;
+    description?: string;
   };
   isEvenRow: boolean;
   isSelectMode: boolean;
