@@ -11,10 +11,14 @@ import { ReactComponent as IconExercise } from "@/assets/icons/IconExercise.svg"
 import { ReactComponent as IconSteps } from "@/assets/icons/IconSteps.svg";
 import { ReactComponent as IconSleep } from "@/assets/icons/IconSleep.svg";
 import { ReactComponent as IconHeartRate } from "@/assets/icons/IconHeartRate.svg";
+import { ReactComponent as IconDashboard } from "@/assets/icons/IconDashboard.svg";
 import {
   ShortDashboardItem,
   ShortDashboardItemProps,
 } from "../components/ShortDashboardItem";
+import ConsultButton from "../components/ConsultButton";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const longDashboardItems: Array<LongDashboardItemProps> = [
   {
@@ -72,6 +76,9 @@ const shortDashboardItem: Array<ShortDashboardItemProps> = [
 ];
 
 export default function HealthDashboardPage() {
+  const nav = useNavigate();
+  const [showOptions, setShowOptions] = useState(false);
+
   return (
     <>
       <TitleSection title="Health Dashboard" allowLastPage />
@@ -83,6 +90,8 @@ export default function HealthDashboardPage() {
           weight={67}
           name="John"
           imageClassName="h-[100px] w-[100px] self-center"
+          showOptions={showOptions}
+          setShowOptions={setShowOptions}
         />
         <div className="w-full border-t border-grey/30 my-[15px]"></div>
         <div className="flex flex-col gap-5 items-center">
@@ -96,6 +105,18 @@ export default function HealthDashboardPage() {
           ))}
         </div>
       </ContentSection>
+      <ConsultButton />
+      {showOptions && (
+        <div className="top-[220px] right-[30px] rounded-[20px] absolute p-3 gap-[10px] border border-primaryBlue bg-white flex flex-col justify-center items-center">
+          <button
+            onClick={() => nav("/VitaGo/supplements")}
+            className="flex items-center gap-[5px]"
+          >
+            <IconDashboard className="w-[30px] h-[30px]" />
+            <span className="text-[16px]">Health Dashboard</span>
+          </button>
+        </div>
+      )}
     </>
   );
 }

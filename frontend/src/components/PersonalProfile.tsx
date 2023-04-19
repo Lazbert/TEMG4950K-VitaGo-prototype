@@ -13,6 +13,8 @@ interface PersonalProfileProps {
   age: number;
   height: number;
   weight: number;
+  showOptions: boolean;
+  setShowOptions: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const PersonalProfile: React.FC<PersonalProfileProps> = ({
@@ -22,8 +24,9 @@ export const PersonalProfile: React.FC<PersonalProfileProps> = ({
   age,
   height,
   weight,
+  showOptions,
+  setShowOptions,
 }) => {
-  const [showOptions, setShowOptions] = useState(false);
   return (
     <div className="flex flex-col gap-5">
       <div className="flex justify-between items-center">
