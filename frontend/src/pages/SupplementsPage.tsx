@@ -169,7 +169,10 @@ export default function SupplementsPage() {
       )}
       {showOptions && (
         <div className="top-[220px] right-[30px] rounded-[20px] absolute p-3 gap-[10px] border border-primaryBlue bg-white flex flex-col justify-center items-center">
-          <button className="flex items-center gap-[5px]">
+          <button
+            onClick={() => nav("/VitaGo/dashboard")}
+            className="flex items-center gap-[5px]"
+          >
             <IconDashboard className="w-[30px] h-[30px]" />
             <span className="text-[16px]">Health Dashboard</span>
           </button>
