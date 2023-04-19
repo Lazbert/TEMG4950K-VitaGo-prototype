@@ -12,6 +12,7 @@ import SupplementsPage from "./pages/SupplementsPage";
 import PastSupplementsPage from "./pages/PastSupplementsPage";
 import HealthDashboardPage from "./pages/HealthDashboardPage";
 import SymptomPage from "./pages/SymptomPage";
+import SupplementTimerPage from "./pages/SupplementTimerPage";
 
 export default function WebRoutes() {
   return (
@@ -34,6 +35,7 @@ export default function WebRoutes() {
         <Route path="supplements">
           <Route index element={<SupplementsPage />} />
           <Route path="history" element={<PastSupplementsPage />} />
+          <Route path=":name" element={<SupplementTimerPage />} />
         </Route>
         <Route path="dashboard" element={<HealthDashboardPage />} />
         <Route path="symptoms" element={<SymptomPage />} />

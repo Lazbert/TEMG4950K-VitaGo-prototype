@@ -114,6 +114,7 @@ export default function SupplementsPage() {
                   return (
                     <SupplementDisplay
                       key={ind}
+                      onClick={() => nav(supp.suppInfo.name)}
                       isSelectMode={isSelectMode}
                       selectingSupp={selectingSupp}
                       setSelectingSupp={setSelectingSupp}
@@ -127,6 +128,7 @@ export default function SupplementsPage() {
                 return (
                   <SupplementDisplay
                     key={ind}
+                    onClick={() => nav(supp.suppInfo.name)}
                     isSelectMode={isSelectMode}
                     selectingSupp={selectingSupp}
                     setSelectingSupp={setSelectingSupp}
