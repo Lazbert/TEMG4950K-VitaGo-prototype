@@ -11,6 +11,7 @@ import SuccessfulPaymentPage from "./pages/SuccessfulPaymentPage";
 import SupplementsPage from "./pages/SupplementsPage";
 import PastSupplementsPage from "./pages/PastSupplementsPage";
 import HealthDashboardPage from "./pages/HealthDashboardPage";
+import SymptomPage from "./pages/SymptomPage";
 
 export default function WebRoutes() {
   return (
@@ -35,6 +36,7 @@ export default function WebRoutes() {
           <Route path="history" element={<PastSupplementsPage />} />
         </Route>
         <Route path="dashboard" element={<HealthDashboardPage />} />
+        <Route path="symptoms" element={<SymptomPage />} />
       </Route>
     </Routes>
   );

@@ -61,7 +61,10 @@ export default function SupplementsPage() {
   return (
     <>
       <TitleSection title="Supplements" allowLastPage />
-      <ContentSection className="h-full !px-[15px]" overflow>
+      <ContentSection
+        className={cx("h-full !px-[15px]", { "overflow-clip": showOptions })}
+        overflow={!showOptions}
+      >
         <div className="flex flex-col px-[19px]">
           <div className="flex justify-between items-center">
             <span className="text-heading-2 font-bold">2023 March</span>

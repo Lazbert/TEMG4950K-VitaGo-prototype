@@ -19,6 +19,7 @@ import {
 import ConsultButton from "../components/ConsultButton";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import cx from "classnames";
 
 const longDashboardItems: Array<LongDashboardItemProps> = [
   {
@@ -82,7 +83,10 @@ export default function HealthDashboardPage() {
   return (
     <>
       <TitleSection title="Health Dashboard" allowLastPage />
-      <ContentSection className="h-full" overflow>
+      <ContentSection
+        className={cx("h-full", { "overflow-clip": showOptions })}
+        overflow={!showOptions}
+      >
         <PersonalProfile
           ProfilePic={John}
           age={22}
