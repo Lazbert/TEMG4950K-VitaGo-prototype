@@ -14,13 +14,20 @@ export default function SupplementTimerPage() {
   const supp = originalSupplements.filter(
     (item) => item.suppInfo.name == name
   )[0];
-  const { brand, displayClassName, frequency, timer, Display, description } =
-    supp.suppInfo;
+  const {
+    brand,
+    displayClassName,
+    frequency,
+    timer,
+    Display,
+    description,
+    prevention,
+  } = supp.suppInfo;
 
   return (
     <>
-      <TitleSection title={name!} allowLastPage />
-      <ContentSection className="h-full">
+      <TitleSection title={name!} allowLastPage navTo="/VitaGo/supplements" />
+      <ContentSection className="h-full" overflow>
         <CircularProgressbarWithChildren
           value={timer == "Now" ? 86400 : getRemainingTime(timer)}
           strokeWidth={5}
@@ -55,6 +62,16 @@ export default function SupplementTimerPage() {
           <SuppDescriptionItem title="Servings per container" value="30" />
           <SuppDescriptionItem title="Frequency" value={frequency} />
           <SuppDescriptionItem title="Description" value={description ?? ""} />
+          <div className="flex flex-col text-[16px] gap-1">
+            <span className="font-bold text-primaryBlue">Prevention</span>
+            <div className="flex flex-wrap gap-[15px]">
+              {prevention?.map((disease) => (
+                <div className="rounded-[30px] text-highlightBrick border border-highlightBrick px-4 py-[10px]">
+                  {disease}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </ContentSection>
     </>

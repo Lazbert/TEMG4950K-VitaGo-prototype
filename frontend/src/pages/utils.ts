@@ -19,6 +19,7 @@ export const originalSupplements: Array<
       timer: "Now",
       description:
         "Supplement the inadequate nutrients from imbalanced diet. One-a-day formula with 20 essential nutrients",
+      prevention: ["Malnutrition", "Vitamin Deficiency"],
     },
   },
   {
@@ -29,6 +30,9 @@ export const originalSupplements: Array<
       displayClassName: "w-[85px] h-[122px]",
       frequency: "Daily, 1 time a day",
       timer: "Now",
+      description:
+        "A generous, non-concentrated serving of omega-3s for everyday support for the heart and brain, in pure, great-tasting liquid and soft gels.",
+      prevention: ["Cardiovascular diseases", "Joint pain", "Renal diseases"],
     },
   },
   {
@@ -39,6 +43,9 @@ export const originalSupplements: Array<
       displayClassName: "w-[76px] h-[131px]",
       frequency: "Daily, 1 time a day",
       timer: "15:00:00",
+      description:
+        "This is a high dose vitamin D product for those with higher vitamin D needs and/or deficiency, as determined by a healthcare professional. Consult with your healthcare professional before use. Take 1 softgel daily with a meal. For easier swallowing, take with water before and during ingestion.",
+      prevention: ["Osteoporosis", "Diabetes", "Multiple sclerosis"],
     },
   },
   {
@@ -49,6 +56,9 @@ export const originalSupplements: Array<
       displayClassName: "w-[101px] h-[121px]",
       frequency: "Daily, 1 time a day",
       timer: "15:00:00",
+      description:
+        "BioGaia® Protectis® tabs is a dietary supplement containing the patented lactic acid bacterium Lactobacillus** reuteri Protectis (L. reuteri DSM 17938) that helps the good microorganisms keep a natural balance in the gut.",
+      prevention: ["Digestive disorders", "Hay fever"],
     },
   },
   {
@@ -59,6 +69,9 @@ export const originalSupplements: Array<
       displayClassName: "w-[77px] h-[129px]",
       frequency: "Daily, 1 time a day",
       timer: "14:00:00",
+      description:
+        "Your bones and muscles are responsible for helping you do what you love, whether that’s long walks with your dog, dance classes, or bike rides. Support them with Calcium-Magnesium-Vitamin D complex! It’s made with calcium and magnesium, which are essential for healthy bones, teeth, and muscle function, plus vitamin D to assist in the proper transport and retention of calcium.",
+      prevention: ["Osteoporosis", "Hypertension", "Colon cancer"],
     },
   },
 ];

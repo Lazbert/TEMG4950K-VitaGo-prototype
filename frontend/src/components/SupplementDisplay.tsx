@@ -15,11 +15,13 @@ export interface SupplementDisplayProps {
     frequency: string;
     timer: string;
     description?: string;
+    prevention?: Array<string>;
   };
   isEvenRow: boolean;
   isSelectMode: boolean;
   selectingSupp: Array<string>;
   setSelectingSupp: React.Dispatch<React.SetStateAction<Array<string>>>;
+  onClick?: () => void;
 }
 
 export const SupplementDisplay: React.FC<SupplementDisplayProps> = ({
@@ -28,6 +30,7 @@ export const SupplementDisplay: React.FC<SupplementDisplayProps> = ({
   isSelectMode,
   selectingSupp,
   setSelectingSupp,
+  onClick,
 }) => {
   const { Display, displayClassName, frequency, name, timer } = suppInfo;
   return (
@@ -41,7 +44,10 @@ export const SupplementDisplay: React.FC<SupplementDisplayProps> = ({
       )}
     >
       {Display && <Display className={displayClassName} />}
-      <div className="px-[10px] py-1 w-full bg-white flex flex-col justify-center rounded-[10px]">
+      <div
+        onClick={onClick}
+        className="px-[10px] py-1 w-full bg-white flex flex-col justify-center rounded-[10px]"
+      >
         <div className="flex justify-between">
           <span className="font-medium">{name}</span>
           <IconRightArrow className="-mr-2 w-[24px] h-[24px]" />
