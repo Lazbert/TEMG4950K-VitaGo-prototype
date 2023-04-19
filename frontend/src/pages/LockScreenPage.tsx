@@ -2,12 +2,24 @@ import LockedTopSection from "@/assets/images/IOS-lockedTopSection.png";
 import LockedBottomSection from "@/assets/images/IOS-lockedBottomSection.png";
 import Notification from "../components/Notification";
 import { useNavigate } from "react-router-dom";
+import cx from "classnames";
 
-export default function LockScreenPage({ demoStage }: { demoStage: string }) {
+export default function LockScreenPage({
+  demoStage,
+  className,
+}: {
+  demoStage: string;
+  className?: string;
+}) {
   const nav = useNavigate();
   const { text, navTo } = getTextAndNavFromStage(demoStage);
   return (
-    <div className="relative pt-[329px] px-[9px] bg-gradient-slanted from-[#5A88E6] via-[#ECEBEF] to-[#A665D9]">
+    <div
+      className={cx(
+        "relative pt-[329px] px-[9px] bg-gradient-slanted from-[#5A88E6] via-[#ECEBEF] to-[#A665D9]",
+        className
+      )}
+    >
       <img className="absolute top-[93px] left-0" src={LockedTopSection} />
       <Notification
         onClick={() =>
