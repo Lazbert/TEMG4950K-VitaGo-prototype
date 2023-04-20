@@ -28,7 +28,7 @@ const longDashboardItems: Array<LongDashboardItemProps> = [
     highlight: "26% above",
     highlightClassName: "text-abnormalRed",
     insight: "last week's average",
-    stat: 37.3,
+    stat: 37.8,
     statClassName: "text-abnormalRed",
     title: "Temperature",
     unit: "°C",
