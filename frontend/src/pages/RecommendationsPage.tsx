@@ -16,10 +16,23 @@ export default function RecommendationsPage() {
     <>
       <TitleSection
         title="Recommendation"
-        titleMsg="Based on your health conditions, we recommended the following supplements"
+        titleMsg="Based on your conditions, we recommended the followings besides your prescription"
       />
-      <ContentSection className="relative h-full mb-[36px] shadow-xl">
+      <ContentSection
+        className="relative h-full mb-[36px] !pb-[120px] shadow-xl"
+        overflow
+      >
         <div className="flex flex-col gap-[18px] overflow-auto scrollbar-hide">
+          <div className="flex gap-5 items-center">
+            <div className="text-[16px] font-bold">
+              Prescription:
+              <br />
+              <span className="font-normal">
+                Insulin Glulisine & Insulin Glargine
+              </span>
+            </div>
+          </div>
+          <div className="self-center border border-[#989191] w-full"></div>
           {recommendedSupplements.map((suppDetails, key) => (
             <>
               {key != 0 && (
@@ -29,13 +42,13 @@ export default function RecommendationsPage() {
             </>
           ))}
         </div>
-        <button
-          onClick={() => nav("delivery")}
-          className="absolute bottom-[24px] w-[307px] h-[70px] bg-highlightBrick text-white font-bold rounded-[40px]"
-        >
-          Continue
-        </button>
       </ContentSection>
+      <button
+        onClick={() => nav("delivery")}
+        className="absolute bottom-[60px] ml-[43px] w-[307px] h-[70px] bg-highlightBrick text-white font-bold rounded-[40px]"
+      >
+        Continue
+      </button>
     </>
   );
 }

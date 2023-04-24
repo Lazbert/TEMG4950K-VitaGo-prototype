@@ -16,16 +16,25 @@ import { ContinueButton } from "../components/ContinueButton";
 import { useNavigate } from "react-router-dom";
 
 const receiptItems = [
-  { item: "3-month VitaGo subscription plan (HK$590/month)", price: "1,770" },
+  { item: "3-month VitaGo subscription plan (HK$200/month)", price: "600" },
   {
-    item: "Multivitamins - Blackmores",
-    price: "Free",
-    servings: "30 capsules",
+    item: "Digestive Biscuits (Sugar-Free) - Gullon",
+    price: "47.6*",
+    servings: "400 g",
   },
-  { item: "Omega-3 - Nordic Naturals", price: "Free", servings: "30 capsules" },
-  { item: "Vitamin D - Nature Made", price: "Free", servings: "30 tablets" },
-  { item: "Probiotics - BioGaia", price: "Free", servings: "30 tablets" },
-  { item: "Calcium - Nature's way", price: "Free", servings: "30 tablets" },
+  {
+    item: "Starch Neutralizer - NOW Foods",
+    price: "140.4*",
+    servings: "120 capsules",
+  },
+  // { item: "Vitamin D - Nature Made", price: "53.1*", servings: "30 tablets" },
+  { item: "Probiotics - BioGaia", price: "80.1*", servings: "30 tablets" },
+  // { item: "Calcium - Nature's way", price: "80.1*", servings: "30 tablets" },
+  {
+    item: "Diabetes Health Pack - Nature's way",
+    price: "165.6*",
+    servings: "30 packets",
+  },
 ];
 
 const paymentMethods = [
@@ -107,7 +116,10 @@ export default function PaymentPage() {
         </div>
         <div className="border-t border-grey/50 w-full my-[18px]"></div>
         <div className="grid grid-cols-[5fr_2fr] gap-y-[14px]">
-          <span className="font-bold">Items</span>
+          <span className="font-bold">
+            Items <br />
+            (excluding prescribed drugs)
+          </span>
           <span className="font-bold text-right">Price (HK$)</span>
           {receiptItems.map((item) => (
             <ReceiptItem {...item} />
@@ -117,8 +129,11 @@ export default function PaymentPage() {
         <div className="flex justify-between">
           <span className="text-heading-2 font-bold">Total</span>
           <span className="text-heading-2 font-bold text-highlightBrick">
-            HK$1,770
+            HK$1,033.7
           </span>
+        </div>
+        <div className="w-full flex justify-end">
+          <span>(*10% off for recommended items)</span>
         </div>
         <div className="border-t border-grey/50 w-full my-[18px]"></div>
         <Agreement

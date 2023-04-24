@@ -43,8 +43,8 @@ export default function SupplementTimerPage() {
           <div className="flex flex-col gap-1 items-center">
             {Display && <Display className={displayClassName} />}
             {timer == "Now" ? (
-              <span className="text-center px-16 text-highlightBrick text-heading-2 font-bold">
-                Take the supplement now
+              <span className="text-center px-12 text-highlightBrick text-heading-2 font-bold">
+                Take the medicine/supplement now
               </span>
             ) : (
               <span className="font-medium text-heading-2">{timer}</span>
@@ -57,21 +57,25 @@ export default function SupplementTimerPage() {
         <div className="flex flex-col mt-3 gap-4">
           <SuppDescriptionItem
             title="Name & brand"
-            value={`${name} - ${brand}`}
+            value={`${name} ${brand ? "-" : ""} ${brand}`}
           />
-          <SuppDescriptionItem title="Servings per container" value="30" />
+          {name != "Insulin" && (
+            <SuppDescriptionItem title="Servings per container" value="30" />
+          )}
           <SuppDescriptionItem title="Frequency" value={frequency} />
           <SuppDescriptionItem title="Description" value={description ?? ""} />
-          <div className="flex flex-col text-[16px] gap-1">
-            <span className="font-bold text-primaryBlue">Prevention</span>
-            <div className="flex flex-wrap gap-[15px]">
-              {prevention?.map((disease) => (
-                <div className="rounded-[30px] text-highlightBrick border border-highlightBrick px-4 py-[10px]">
-                  {disease}
-                </div>
-              ))}
+          {name != "Insulin" && (
+            <div className="flex flex-col text-[16px] gap-1">
+              <span className="font-bold text-primaryBlue">Prevention</span>
+              <div className="flex flex-wrap gap-[15px]">
+                {prevention?.map((disease) => (
+                  <div className="rounded-[30px] text-highlightBrick border border-highlightBrick px-4 py-[10px]">
+                    {disease}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </ContentSection>
     </>

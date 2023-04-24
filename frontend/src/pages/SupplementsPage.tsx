@@ -60,7 +60,7 @@ export default function SupplementsPage() {
 
   return (
     <>
-      <TitleSection title="Supplements" allowLastPage />
+      <TitleSection title="Medication & Supplements" allowLastPage />
       <ContentSection
         className={cx("h-full !px-[15px]", { "overflow-clip": showOptions })}
         overflow={!showOptions}
@@ -102,7 +102,7 @@ export default function SupplementsPage() {
             </div>
           </div>
           <span className="text-highlightBrick text-[16px]">
-            Remember to take the following supplements on time:
+            Remember to take the followings on time:
           </span>
         </div>
         <div className="mt-[15px] grid grid-cols-2 gap-[15px]">
