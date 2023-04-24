@@ -1,10 +1,11 @@
 import { ReactComponent as Blackmores } from "@/assets/images/Blackmores.svg";
 import { ReactComponent as Gullon } from "@/assets/images/Gullon.svg";
 import { ReactComponent as NOWFoods } from "@/assets/images/NOWFoods.svg";
-import { ReactComponent as NordicNaturals } from "@/assets/images/NordicNaturals.svg";
+// import { ReactComponent as NordicNaturals } from "@/assets/images/NordicNaturals.svg";
 import { ReactComponent as NatureMade } from "@/assets/images/NatureMade.svg";
 import { ReactComponent as BioGaia } from "@/assets/images/BioGaia.svg";
 import { ReactComponent as NaturesWay } from "@/assets/images/NaturesWay.svg";
+import { ReactComponent as Insulin } from "@/assets/images/Insulin.svg";
 import { SupplementDisplayProps } from "../components/SupplementDisplay";
 import { RecommendationItemProps } from "../components/RecommendationItem";
 
@@ -13,13 +14,14 @@ export const originalSupplements: Array<
 > = [
   {
     suppInfo: {
-      name: "Digestive Biscuits (Sugar-Free)",
-      Display: Gullon,
-      brand: "Gullon",
-      displayClassName: "w-[80px] h-[119px]",
-      frequency: "",
+      name: "Insulin",
+      Display: Insulin,
+      brand: "",
+      displayClassName: "w-[89px] h-[119px]",
+      frequency: "Daily, 3 shots a day",
       timer: "Now",
-      description: "",
+      description:
+        "Lower blood glucose levels by promoting the uptake of glucose into cells and the storage of excess glucose as glycogen. Injection about 15 minutes before meal is recommended",
       prevention: [],
     },
   },
@@ -38,30 +40,30 @@ export const originalSupplements: Array<
   // },
   {
     suppInfo: {
-      name: "Omega-3",
-      Display: NordicNaturals,
-      brand: "NordicNaturals",
+      name: "Starch Neutralizer",
+      Display: NOWFoods,
+      brand: "NOW Foods",
       displayClassName: "w-[85px] h-[122px]",
-      frequency: "Daily, 1 time a day",
+      frequency: "Daily, 3 time a day",
       timer: "Now",
       description:
-        "A generous, non-concentrated serving of omega-3s for everyday support for the heart and brain, in pure, great-tasting liquid and soft gels.",
-      prevention: ["Cardiovascular diseases", "Joint pain", "Renal diseases"],
+        "A non-stimulant white kidney bean extract that can help to delay the breakdown of dietary starches by limiting the action of the digestive enzyme alpha-amylase. Take 3 capsules before any meal containing complex carbohydrates or starches, or as directed by a healthcare practitioner.",
+      prevention: ["Diabetes", "Obesity"],
     },
   },
-  {
-    suppInfo: {
-      name: "Vitamin D",
-      Display: NatureMade,
-      brand: "NatureMade",
-      displayClassName: "w-[76px] h-[131px]",
-      frequency: "Daily, 1 time a day",
-      timer: "15:00:00",
-      description:
-        "This is a high dose vitamin D product for those with higher vitamin D needs and/or deficiency, as determined by a healthcare professional. Consult with your healthcare professional before use. Take 1 softgel daily with a meal. For easier swallowing, take with water before and during ingestion.",
-      prevention: ["Osteoporosis", "Diabetes", "Multiple sclerosis"],
-    },
-  },
+  // {
+  //   suppInfo: {
+  //     name: "Vitamin D",
+  //     Display: NatureMade,
+  //     brand: "NatureMade",
+  //     displayClassName: "w-[76px] h-[131px]",
+  //     frequency: "Daily, 1 time a day",
+  //     timer: "15:00:00",
+  //     description:
+  //       "This is a high dose vitamin D product for those with higher vitamin D needs and/or deficiency, as determined by a healthcare professional. Consult with your healthcare professional before use. Take 1 softgel daily with a meal. For easier swallowing, take with water before and during ingestion.",
+  //     prevention: ["Osteoporosis", "Diabetes", "Multiple sclerosis"],
+  //   },
+  // },
   {
     suppInfo: {
       name: "Probiotics",
@@ -77,15 +79,15 @@ export const originalSupplements: Array<
   },
   {
     suppInfo: {
-      name: "Calcium",
+      name: "Diabetes Health Pack",
       Display: NaturesWay,
       brand: "Natures' Way",
       displayClassName: "w-[77px] h-[129px]",
       frequency: "Daily, 1 time a day",
       timer: "14:00:00",
       description:
-        "Your bones and muscles are responsible for helping you do what you love, whether that’s long walks with your dog, dance classes, or bike rides. Support them with Calcium-Magnesium-Vitamin D complex! It’s made with calcium and magnesium, which are essential for healthy bones, teeth, and muscle function, plus vitamin D to assist in the proper transport and retention of calcium.",
-      prevention: ["Osteoporosis", "Hypertension", "Colon cancer"],
+        "Formulated with a comprehensive combination of key vitamins, minerals and other supplements to provide daily nutritional support for people with diabetes or prediabetes.",
+      prevention: ["Malnutrition", "Diabetes"],
     },
   },
 ];

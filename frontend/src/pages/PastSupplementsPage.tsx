@@ -53,7 +53,7 @@ export default function PastSupplementsPage() {
           className={cx(
             "font-medium text-heading-2 rounded-[40px] w-[307px] h-[70px] text-white bg-highlightBrick",
             {
-              "bg-[#CECECE]": selected.length == 0,
+              "!bg-[#CECECE] disabled": selected.length == 0,
             }
           )}
           disabled={selected.length == 0}

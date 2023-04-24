@@ -46,7 +46,7 @@ export const SupplementDisplay: React.FC<SupplementDisplayProps> = ({
       {Display && <Display className={displayClassName} />}
       <div
         onClick={onClick}
-        className="px-[10px] py-1 w-full bg-white flex flex-col justify-center rounded-[10px]"
+        className="p-[10px] w-full bg-white flex flex-col justify-center rounded-[10px]"
       >
         <div className="flex justify-between">
           <span className="font-medium">{name}</span>
