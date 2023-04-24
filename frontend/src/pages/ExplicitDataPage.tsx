@@ -33,7 +33,7 @@ export default function ExplicitDataPage() {
   return (
     <>
       <TitleSection
-        title="VitaGo"
+        title="Vital-Go"
         titleMsg="Please provide the following information to proceed"
         allowLastPage
       />

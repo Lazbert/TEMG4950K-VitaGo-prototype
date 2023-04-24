@@ -39,10 +39,10 @@ export default function BookingSelectedPage() {
   const handleBookingStage = () => {
     if (bookingStage == "calendar" && selectedCalendarDate) {
       setBookingStage("time");
-      console.log("switched to time selection");
     } else if (bookingStage == "time" && selectedTimeRange) {
       setBookingStage("confirm");
-      console.log("switched to confirm booking");
+    } else if (bookingStage == "confirm") {
+      nav("/");
     }
   };
 

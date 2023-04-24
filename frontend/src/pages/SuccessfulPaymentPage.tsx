@@ -15,8 +15,8 @@ export default function SuccessfulPaymentPage() {
           Completed
         </span>
         <span className="text-center text-heading-2">
-          Congratulations on becoming a VitaGo user! Your subscription will last
-          till 01/06/2023
+          Congratulations on becoming a Vital-Go user! Your subscription will
+          last till 01/06/2023
         </span>
       </div>
       <div className="flex flex-col items-center gap-[26px]">

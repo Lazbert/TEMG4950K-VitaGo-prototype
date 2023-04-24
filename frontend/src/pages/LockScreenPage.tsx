@@ -38,7 +38,7 @@ const getTextAndNavFromStage = (
   switch (demoStage) {
     case "Update explicit data":
       return {
-        text: "Hi there! It's time to update your profile in VitaGo so that we can provide the best recommendations to you.",
+        text: "Hi there! It's time to update your profile in Vital-Go so that we can provide the best recommendations to you.",
         navTo: "/VitaGo",
       };
     case "Abnormality detection":
