@@ -111,7 +111,10 @@ export default function PaymentPage() {
         </div>
         <div className="border-t border-grey/50 w-full my-[18px]"></div>
         <div className="grid grid-cols-[5fr_2fr] gap-y-[14px]">
-          <span className="font-bold">Items</span>
+          <span className="font-bold">
+            Items <br />
+            (excluding prescribed drugs)
+          </span>
           <span className="font-bold text-right">Price (HK$)</span>
           {receiptItems.map((item) => (
             <ReceiptItem {...item} />

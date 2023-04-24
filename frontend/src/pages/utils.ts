@@ -1,4 +1,6 @@
 import { ReactComponent as Blackmores } from "@/assets/images/Blackmores.svg";
+import { ReactComponent as Gullon } from "@/assets/images/Gullon.svg";
+import { ReactComponent as NOWFoods } from "@/assets/images/NOWFoods.svg";
 import { ReactComponent as NordicNaturals } from "@/assets/images/NordicNaturals.svg";
 import { ReactComponent as NatureMade } from "@/assets/images/NatureMade.svg";
 import { ReactComponent as BioGaia } from "@/assets/images/BioGaia.svg";
@@ -11,17 +13,29 @@ export const originalSupplements: Array<
 > = [
   {
     suppInfo: {
-      name: "Multivitamins",
-      Display: Blackmores,
-      brand: "Blackmores",
+      name: "Digestive Biscuits (Sugar-Free)",
+      Display: Gullon,
+      brand: "Gullon",
       displayClassName: "w-[80px] h-[119px]",
-      frequency: "Daily, 1 time a day",
+      frequency: "",
       timer: "Now",
-      description:
-        "Supplement the inadequate nutrients from imbalanced diet. One-a-day formula with 20 essential nutrients",
-      prevention: ["Malnutrition", "Vitamin Deficiency"],
+      description: "",
+      prevention: [],
     },
   },
+  // {
+  //   suppInfo: {
+  //     name: "Multivitamins",
+  //     Display: Blackmores,
+  //     brand: "Blackmores",
+  //     displayClassName: "w-[80px] h-[119px]",
+  //     frequency: "Daily, 1 time a day",
+  //     timer: "Now",
+  //     description:
+  //       "Supplement the inadequate nutrients from imbalanced diet. One-a-day formula with 20 essential nutrients",
+  //     prevention: ["Malnutrition", "Vitamin Deficiency"],
+  //   },
+  // },
   {
     suppInfo: {
       name: "Omega-3",
@@ -77,33 +91,51 @@ export const originalSupplements: Array<
 ];
 
 export const recommendedSupplements: Array<RecommendationItemProps> = [
+  // {
+  //   name: "Multivitamins",
+  //   brand: "Blackmores",
+  //   dosageForm: "capsules",
+  //   price: 89,
+  //   servingPerContainer: 30,
+  //   SupplementImage: Blackmores,
+  //   imageClassName: "w-[39px] h-[58px]",
+  // },
   {
-    name: "Multivitamins",
-    brand: "Blackmores",
-    dosageForm: "capsules",
-    price: 89,
-    servingPerContainer: 30,
-    SupplementImage: Blackmores,
-    imageClassName: "w-[39px] h-[58px]",
+    name: "Digestive Biscuits (Sugar-Free)",
+    brand: "Gullon",
+    dosageForm: "g",
+    price: 52.9,
+    servingPerContainer: 400,
+    SupplementImage: Gullon,
+    imageClassName: "w-[50px] h-[50px]",
   },
+  // {
+  //   name: "Omega-3",
+  //   brand: "Nordic Naturals",
+  //   dosageForm: "capsules",
+  //   price: 109,
+  //   servingPerContainer: 30,
+  //   SupplementImage: NordicNaturals,
+  //   imageClassName: "w-[58px] h-[58px] -ml-2 -mr-3",
+  // },
   {
-    name: "Omega-3",
-    brand: "Nordic Naturals",
+    name: "Starch Neutralizer",
+    brand: "NOW Foods",
     dosageForm: "capsules",
-    price: 109,
-    servingPerContainer: 30,
-    SupplementImage: NordicNaturals,
+    price: 156,
+    servingPerContainer: 120,
+    SupplementImage: NOWFoods,
     imageClassName: "w-[58px] h-[58px] -ml-2 -mr-3",
   },
-  {
-    name: "Vitamin D",
-    brand: "Nature Made",
-    dosageForm: "tablets",
-    price: 69,
-    servingPerContainer: 30,
-    SupplementImage: NatureMade,
-    imageClassName: "w-[58px] h-[58px] -ml-2 -mr-[10px]",
-  },
+  // {
+  //   name: "Vitamin D",
+  //   brand: "Nature Made",
+  //   dosageForm: "tablets",
+  //   price: 69,
+  //   servingPerContainer: 30,
+  //   SupplementImage: NatureMade,
+  //   imageClassName: "w-[58px] h-[58px] -ml-2 -mr-[10px]",
+  // },
   {
     name: "Probiotics",
     brand: "BioGaia",
@@ -114,12 +146,12 @@ export const recommendedSupplements: Array<RecommendationItemProps> = [
     imageClassName: "w-[58px] h-[58px] -ml-2 -mr-[9px]",
   },
   {
-    name: "Calcium",
+    name: "Diabetes Health Pack",
     brand: "Nature's Way",
-    dosageForm: "tablets",
-    price: 89,
+    dosageForm: "packets",
+    price: 184,
     servingPerContainer: 30,
     SupplementImage: NaturesWay,
-    imageClassName: "w-[35px] h-[58px] ml-1",
+    imageClassName: "w-[55px] h-[55px] -ml-1 pl-1",
   },
 ];
