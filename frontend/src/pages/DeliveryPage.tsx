@@ -28,7 +28,7 @@ export default function DeliveryPage() {
               We do not deliver to certain locations
               <br />
               <br />
-              If VitaGo’s delivery is unable to deliver the supplements at the
+              If Vital-Go’s delivery is unable to deliver the supplements at the
               agreed time to you (other than due to the fault of the delivery
               person) and another time has to be arranged, you will be liable to
               pay a surcharge for the delivery service

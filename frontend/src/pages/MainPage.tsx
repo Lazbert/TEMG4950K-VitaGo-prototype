@@ -42,7 +42,7 @@ export default function MainPage() {
             className="flex flex-col items-center"
           >
             <IconVitaGo className="h-[48px] w-[48px]" />
-            <span className="font-semibold">VitaGo</span>
+            <span className="font-semibold">Vital-Go</span>
           </button>
         </div>
       ) : (

@@ -16,7 +16,7 @@ import { ContinueButton } from "../components/ContinueButton";
 import { useNavigate } from "react-router-dom";
 
 const receiptItems = [
-  { item: "3-month VitaGo subscription plan (HK$200/month)", price: "600" },
+  { item: "3-month Vital-Go subscription plan (HK$200/month)", price: "600" },
   {
     item: "Digestive Biscuits (Sugar-Free) - Gullon",
     price: "47.6*",
@@ -96,9 +96,9 @@ export default function PaymentPage() {
             <img src={IconSupplement} className="h-[60px] w-[60px]" />
             <div className="flex flex-col">
               <span className="font-bold text-heading-2 text-primaryBlue">
-                VitaGo Subscription
+                Vital-Go Subscription
               </span>
-              <span>By subscribing to VitaGo, you receive:</span>
+              <span>By subscribing to Vital-Go, you receive:</span>
             </div>
           </div>
           <div className="flex gap-3 items-center">
