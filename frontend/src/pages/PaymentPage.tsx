@@ -18,18 +18,23 @@ import { useNavigate } from "react-router-dom";
 const receiptItems = [
   { item: "3-month VitaGo subscription plan (HK$200/month)", price: "600" },
   {
-    item: "Multivitamins - Blackmores",
-    price: "80.1*",
-    servings: "30 capsules",
+    item: "Digestive Biscuits (Sugar-Free) - Gullon",
+    price: "47.6*",
+    servings: "400 g",
   },
   {
-    item: "Omega-3 - Nordic Naturals",
-    price: "62.1*",
-    servings: "30 capsules",
+    item: "Starch Neutralizer - NOW Foods",
+    price: "140.4*",
+    servings: "120 capsules",
   },
-  { item: "Vitamin D - Nature Made", price: "53.1*", servings: "30 tablets" },
+  // { item: "Vitamin D - Nature Made", price: "53.1*", servings: "30 tablets" },
   { item: "Probiotics - BioGaia", price: "80.1*", servings: "30 tablets" },
-  { item: "Calcium - Nature's way", price: "80.1*", servings: "30 tablets" },
+  // { item: "Calcium - Nature's way", price: "80.1*", servings: "30 tablets" },
+  {
+    item: "Diabetes Health Pack - Nature's way",
+    price: "165.6*",
+    servings: "30 packets",
+  },
 ];
 
 const paymentMethods = [
@@ -124,11 +129,11 @@ export default function PaymentPage() {
         <div className="flex justify-between">
           <span className="text-heading-2 font-bold">Total</span>
           <span className="text-heading-2 font-bold text-highlightBrick">
-            HK$955.5
+            HK$1,033.7
           </span>
         </div>
         <div className="w-full flex justify-end">
-          <span>(*10% off for supplements)</span>
+          <span>(*10% off for recommended items)</span>
         </div>
         <div className="border-t border-grey/50 w-full my-[18px]"></div>
         <Agreement
