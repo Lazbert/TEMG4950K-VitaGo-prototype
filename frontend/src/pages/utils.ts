@@ -13,45 +13,58 @@ import { RecommendationItemProps } from "../components/RecommendationItem";
 export const originalSupplements: Array<
   Pick<SupplementDisplayProps, "suppInfo">
 > = [
-  {
-    suppInfo: {
-      name: "Insulin",
-      Display: Insulin,
-      brand: "",
-      displayClassName: "w-[89px] h-[119px]",
-      frequency: "Daily, 3 shots a day",
-      timer: "Now",
-      description:
-        "Lower blood glucose levels by promoting the uptake of glucose into cells and the storage of excess glucose as glycogen. Injection about 15 minutes before meal is recommended",
-      prevention: [],
-    },
-  },
   // {
   //   suppInfo: {
-  //     name: "Multivitamins",
-  //     Display: Blackmores,
-  //     brand: "Blackmores",
-  //     displayClassName: "w-[80px] h-[119px]",
-  //     frequency: "Daily, 1 time a day",
+  //     name: "Insulin",
+  //     Display: Insulin,
+  //     brand: "",
+  //     displayClassName: "w-[89px] h-[119px]",
+  //     frequency: "Daily, 3 shots a day",
   //     timer: "Now",
   //     description:
-  //       "Supplement the inadequate nutrients from imbalanced diet. One-a-day formula with 20 essential nutrients",
-  //     prevention: ["Malnutrition", "Vitamin Deficiency"],
+  //       "Lower blood glucose levels by promoting the uptake of glucose into cells and the storage of excess glucose as glycogen. Injection about 15 minutes before meal is recommended",
+  //     prevention: [],
   //   },
   // },
   {
     suppInfo: {
-      name: "Starch Neutralizer",
-      Display: NOWFoods,
-      brand: "NOW Foods",
-      displayClassName: "w-[85px] h-[122px]",
-      frequency: "Daily, 3 time a day",
+      name: "Multivitamins",
+      Display: Blackmores,
+      brand: "Blackmores",
+      displayClassName: "w-[80px] h-[119px]",
+      frequency: "Daily, 1 time a day",
       timer: "Now",
       description:
-        "A non-stimulant white kidney bean extract that can help to delay the breakdown of dietary starches by limiting the action of the digestive enzyme alpha-amylase. Take 3 capsules before any meal containing complex carbohydrates or starches, or as directed by a healthcare practitioner.",
-      prevention: ["Diabetes", "Obesity"],
+        "Supplement the inadequate nutrients from imbalanced diet. One-a-day formula with 20 essential nutrients",
+      prevention: ["Malnutrition", "Vitamin Deficiency"],
     },
   },
+  {
+    suppInfo: {
+      name: "Omega-3",
+      Display: NordicNaturals,
+      brand: "NordicNaturals",
+      displayClassName: "w-[85px] h-[122px]",
+      frequency: "Daily, 1 time a day",
+      timer: "Now",
+      description:
+        "A generous, non-concentrated serving of omega-3s for everyday support for the heart and brain, in pure, great-tasting liquid and soft gels.",
+      prevention: ["Cardiovascular diseases", "Joint pain", "Renal diseases"],
+    },
+  },
+  // {
+  //   suppInfo: {
+  //     name: "Starch Neutralizer",
+  //     Display: NOWFoods,
+  //     brand: "NOW Foods",
+  //     displayClassName: "w-[85px] h-[122px]",
+  //     frequency: "Daily, 3 time a day",
+  //     timer: "Now",
+  //     description:
+  //       "A non-stimulant white kidney bean extract that can help to delay the breakdown of dietary starches by limiting the action of the digestive enzyme alpha-amylase. Take 3 capsules before any meal containing complex carbohydrates or starches, or as directed by a healthcare practitioner.",
+  //     prevention: ["Diabetes", "Obesity"],
+  //   },
+  // },
   {
     suppInfo: {
       name: "Vitamin D",
@@ -78,17 +91,30 @@ export const originalSupplements: Array<
       prevention: ["Digestive disorders", "Hay fever"],
     },
   },
+  // {
+  //   suppInfo: {
+  //     name: "Diabetes Health Pack",
+  //     Display: NaturesWay,
+  //     brand: "Natures' Way",
+  //     displayClassName: "w-[77px] h-[129px]",
+  //     frequency: "Daily, 1 time a day",
+  //     timer: "14:00:00",
+  //     description:
+  //       "Formulated with a comprehensive combination of key vitamins, minerals and other supplements to provide daily nutritional support for people with diabetes or prediabetes.",
+  //     prevention: ["Malnutrition", "Diabetes"],
+  //   },
+  // },
   {
     suppInfo: {
-      name: "Diabetes Health Pack",
+      name: "Calcium",
       Display: NaturesWay,
       brand: "Natures' Way",
       displayClassName: "w-[77px] h-[129px]",
       frequency: "Daily, 1 time a day",
       timer: "14:00:00",
       description:
-        "Formulated with a comprehensive combination of key vitamins, minerals and other supplements to provide daily nutritional support for people with diabetes or prediabetes.",
-      prevention: ["Malnutrition", "Diabetes"],
+        "Your bones and muscles are responsible for helping you do what you love, whether that’s long walks with your dog, dance classes, or bike rides. Support them with Calcium-Magnesium-Vitamin D complex! It’s made with calcium and magnesium, which are essential for healthy bones, teeth, and muscle function, plus vitamin D to assist in the proper transport and retention of calcium.",
+      prevention: ["Osteoporosis", "Hypertension", "Colon cancer"],
     },
   },
 ];
