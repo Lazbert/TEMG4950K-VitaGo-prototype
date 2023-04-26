@@ -1,17 +1,22 @@
 import TitleSection from "../components/TitleSection";
 import ContentSection from "../components/ContentSection";
 import { ReactComponent as IconDownArrow } from "@/assets/icons/IconDownArrow.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function BookingPage() {
   const nav = useNavigate();
+  const state = useLocation().state;
   return (
     <>
       <TitleSection title="Healthcare Professional" allowLastPage />
       <ContentSection className="h-full">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-[6px]">
-            <span className="text-[24px]">General Practice & Supplements</span>
+            <span className="text-[24px]">
+              {state == "specialist"
+                ? "Specialist"
+                : "General Practice & Supplements"}
+            </span>
             <span>
               The shown appointment slots are not confirmed. The actual
               appointment date and time may differ and is subject to the
