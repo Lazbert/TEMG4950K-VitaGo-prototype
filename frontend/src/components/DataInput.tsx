@@ -29,7 +29,12 @@ export const DataInput: React.FC<DataInputProps> = ({
         <div className="flex justify-between">
           <div className="flex flex-col justify-between">
             <span className="text-[12px] font-light">{title}</span>
-            <span>{calendar ? formatDate(date) : selected}</span>
+            {calendar ? (
+              <input className="outline-none" />
+            ) : (
+              <span>{selected}</span>
+            )}
+            {/* <span>{calendar ? formatDate(date) : selected}</span> */}
           </div>
           <div className="pt-[2px]">
             {calendar ? (
@@ -50,13 +55,14 @@ export const DataInput: React.FC<DataInputProps> = ({
       </div>
       {showDropDownList &&
         (calendar ? (
-          <Calendar
-            className="z-20 absolute top-[65px] rounded-[15px]"
-            value={date}
-            onChange={setDate as () => void}
-            locale="en-GB"
-          />
+          <></>
         ) : (
+          // <Calendar
+          //   className="z-20 absolute top-[65px] rounded-[15px]"
+          //   value={date}
+          //   onChange={setDate as () => void}
+          //   locale="en-GB"
+          // />
           <DropDownList
             options={options}
             setSelected={setSelected}
