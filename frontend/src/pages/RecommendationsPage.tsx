@@ -23,7 +23,7 @@ export default function RecommendationsPage() {
         overflow
       >
         <div className="flex flex-col gap-[18px] overflow-auto scrollbar-hide">
-          <div className="flex gap-5 items-center">
+          {/* <div className="flex gap-5 items-center">
             <div className="text-[16px] font-bold">
               Prescription:
               <br />
@@ -31,8 +31,8 @@ export default function RecommendationsPage() {
                 Insulin Glulisine & Insulin Glargine
               </span>
             </div>
-          </div>
-          <div className="self-center border border-[#989191] w-full"></div>
+          </div> */}
+          {/* <div className="self-center border border-[#989191] w-full"></div> */}
           {recommendedSupplements.map((suppDetails, key) => (
             <>
               {key != 0 && (

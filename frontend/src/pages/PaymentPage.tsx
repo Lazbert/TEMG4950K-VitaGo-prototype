@@ -15,26 +15,43 @@ import PaymentMethod from "../components/PaymentMethod";
 import { ContinueButton } from "../components/ContinueButton";
 import { useNavigate } from "react-router-dom";
 
+// const receiptItems = [
+//   { item: "3-month Vital-Go subscription plan (HK$200/month)", price: "600" },
+//   {
+//     item: "Digestive Biscuits (Sugar-Free) - Gullon",
+//     price: "47.6*",
+//     servings: "400 g",
+//   },
+//   {
+//     item: "Starch Neutralizer - NOW Foods",
+//     price: "140.4*",
+//     servings: "120 capsules",
+//   },
+//   // { item: "Vitamin D - Nature Made", price: "53.1*", servings: "30 tablets" },
+//   { item: "Probiotics - BioGaia", price: "80.1*", servings: "30 tablets" },
+//   // { item: "Calcium - Nature's way", price: "80.1*", servings: "30 tablets" },
+//   {
+//     item: "Diabetes Health Pack - Nature's way",
+//     price: "165.6*",
+//     servings: "30 packets",
+//   },
+// ];
+
 const receiptItems = [
-  { item: "3-month Vital-Go subscription plan (HK$200/month)", price: "600" },
+  { item: "3-month VitaGo subscription plan (HK$200/month)", price: "600" },
   {
-    item: "Digestive Biscuits (Sugar-Free) - Gullon",
-    price: "47.6*",
-    servings: "400 g",
+    item: "Multivitamins - Blackmores",
+    price: "80.1*",
+    servings: "30 capsules",
   },
   {
-    item: "Starch Neutralizer - NOW Foods",
-    price: "140.4*",
-    servings: "120 capsules",
+    item: "Omega-3 - Nordic Naturals",
+    price: "98.1*",
+    servings: "30 capsules",
   },
-  // { item: "Vitamin D - Nature Made", price: "53.1*", servings: "30 tablets" },
-  { item: "Probiotics - BioGaia", price: "80.1*", servings: "30 tablets" },
-  // { item: "Calcium - Nature's way", price: "80.1*", servings: "30 tablets" },
-  {
-    item: "Diabetes Health Pack - Nature's way",
-    price: "165.6*",
-    servings: "30 packets",
-  },
+  { item: "Vitamin D - Nature Made", price: "62.1*", servings: "30 tablets" },
+  { item: "Probiotics - BioGaia", price: "53.1*", servings: "30 tablets" },
+  { item: "Calcium - Nature's way", price: "80.1*", servings: "30 tablets" },
 ];
 
 const paymentMethods = [
@@ -129,7 +146,7 @@ export default function PaymentPage() {
         <div className="flex justify-between">
           <span className="text-heading-2 font-bold">Total</span>
           <span className="text-heading-2 font-bold text-highlightBrick">
-            HK$1,033.7
+            HK$973.5
           </span>
         </div>
         <div className="w-full flex justify-end">

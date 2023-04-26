@@ -1,10 +1,11 @@
 import { ReactComponent as Blackmores } from "@/assets/images/Blackmores.svg";
 import { ReactComponent as Gullon } from "@/assets/images/Gullon.svg";
 import { ReactComponent as NOWFoods } from "@/assets/images/NOWFoods.svg";
-// import { ReactComponent as NordicNaturals } from "@/assets/images/NordicNaturals.svg";
+import { ReactComponent as NordicNaturals } from "@/assets/images/NordicNaturals.svg";
 import { ReactComponent as NatureMade } from "@/assets/images/NatureMade.svg";
 import { ReactComponent as BioGaia } from "@/assets/images/BioGaia.svg";
 import { ReactComponent as NaturesWay } from "@/assets/images/NaturesWay.svg";
+import { ReactComponent as Calcium } from "@/assets/images/Calcium.svg";
 import { ReactComponent as Insulin } from "@/assets/images/Insulin.svg";
 import { SupplementDisplayProps } from "../components/SupplementDisplay";
 import { RecommendationItemProps } from "../components/RecommendationItem";
@@ -51,19 +52,19 @@ export const originalSupplements: Array<
       prevention: ["Diabetes", "Obesity"],
     },
   },
-  // {
-  //   suppInfo: {
-  //     name: "Vitamin D",
-  //     Display: NatureMade,
-  //     brand: "NatureMade",
-  //     displayClassName: "w-[76px] h-[131px]",
-  //     frequency: "Daily, 1 time a day",
-  //     timer: "15:00:00",
-  //     description:
-  //       "This is a high dose vitamin D product for those with higher vitamin D needs and/or deficiency, as determined by a healthcare professional. Consult with your healthcare professional before use. Take 1 softgel daily with a meal. For easier swallowing, take with water before and during ingestion.",
-  //     prevention: ["Osteoporosis", "Diabetes", "Multiple sclerosis"],
-  //   },
-  // },
+  {
+    suppInfo: {
+      name: "Vitamin D",
+      Display: NatureMade,
+      brand: "NatureMade",
+      displayClassName: "w-[76px] h-[131px]",
+      frequency: "Daily, 1 time a day",
+      timer: "15:00:00",
+      description:
+        "This is a high dose vitamin D product for those with higher vitamin D needs and/or deficiency, as determined by a healthcare professional. Consult with your healthcare professional before use. Take 1 softgel daily with a meal. For easier swallowing, take with water before and during ingestion.",
+      prevention: ["Osteoporosis", "Diabetes", "Multiple sclerosis"],
+    },
+  },
   {
     suppInfo: {
       name: "Probiotics",
@@ -93,51 +94,51 @@ export const originalSupplements: Array<
 ];
 
 export const recommendedSupplements: Array<RecommendationItemProps> = [
-  // {
-  //   name: "Multivitamins",
-  //   brand: "Blackmores",
-  //   dosageForm: "capsules",
-  //   price: 89,
-  //   servingPerContainer: 30,
-  //   SupplementImage: Blackmores,
-  //   imageClassName: "w-[39px] h-[58px]",
-  // },
   {
-    name: "Digestive Biscuits (Sugar-Free)",
-    brand: "Gullon",
-    dosageForm: "g",
-    price: 52.9,
-    servingPerContainer: 400,
-    SupplementImage: Gullon,
-    imageClassName: "w-[50px] h-[50px]",
+    name: "Multivitamins",
+    brand: "Blackmores",
+    dosageForm: "capsules",
+    price: 89,
+    servingPerContainer: 30,
+    SupplementImage: Blackmores,
+    imageClassName: "w-[39px] h-[58px]",
   },
   // {
-  //   name: "Omega-3",
-  //   brand: "Nordic Naturals",
-  //   dosageForm: "capsules",
-  //   price: 109,
-  //   servingPerContainer: 30,
-  //   SupplementImage: NordicNaturals,
-  //   imageClassName: "w-[58px] h-[58px] -ml-2 -mr-3",
+  //   name: "Digestive Biscuits (Sugar-Free)",
+  //   brand: "Gullon",
+  //   dosageForm: "g",
+  //   price: 52.9,
+  //   servingPerContainer: 400,
+  //   SupplementImage: Gullon,
+  //   imageClassName: "w-[50px] h-[50px]",
   // },
   {
-    name: "Starch Neutralizer",
-    brand: "NOW Foods",
+    name: "Omega-3",
+    brand: "Nordic Naturals",
     dosageForm: "capsules",
-    price: 156,
-    servingPerContainer: 120,
-    SupplementImage: NOWFoods,
+    price: 109,
+    servingPerContainer: 30,
+    SupplementImage: NordicNaturals,
     imageClassName: "w-[58px] h-[58px] -ml-2 -mr-3",
   },
   // {
-  //   name: "Vitamin D",
-  //   brand: "Nature Made",
-  //   dosageForm: "tablets",
-  //   price: 69,
-  //   servingPerContainer: 30,
-  //   SupplementImage: NatureMade,
-  //   imageClassName: "w-[58px] h-[58px] -ml-2 -mr-[10px]",
+  //   name: "Starch Neutralizer",
+  //   brand: "NOW Foods",
+  //   dosageForm: "capsules",
+  //   price: 156,
+  //   servingPerContainer: 120,
+  //   SupplementImage: NOWFoods,
+  //   imageClassName: "w-[58px] h-[58px] -ml-2 -mr-3",
   // },
+  {
+    name: "Vitamin D",
+    brand: "Nature Made",
+    dosageForm: "tablets",
+    price: 69,
+    servingPerContainer: 30,
+    SupplementImage: NatureMade,
+    imageClassName: "w-[58px] h-[58px] -ml-2 -mr-[10px]",
+  },
   {
     name: "Probiotics",
     brand: "BioGaia",
@@ -147,13 +148,22 @@ export const recommendedSupplements: Array<RecommendationItemProps> = [
     SupplementImage: BioGaia,
     imageClassName: "w-[58px] h-[58px] -ml-2 -mr-[9px]",
   },
+  // {
+  //   name: "Diabetes Health Pack",
+  //   brand: "Nature's Way",
+  //   dosageForm: "packets",
+  //   price: 184,
+  //   servingPerContainer: 30,
+  //   SupplementImage: NaturesWay,
+  //   imageClassName: "w-[55px] h-[55px] -ml-1 pl-1",
+  // },
   {
-    name: "Diabetes Health Pack",
+    name: "Calcium",
     brand: "Nature's Way",
-    dosageForm: "packets",
-    price: 184,
+    dosageForm: "tablets",
+    price: 89,
     servingPerContainer: 30,
-    SupplementImage: NaturesWay,
-    imageClassName: "w-[55px] h-[55px] -ml-1 pl-1",
+    SupplementImage: Calcium,
+    imageClassName: "w-[35px] h-[58px] ml-1",
   },
 ];
