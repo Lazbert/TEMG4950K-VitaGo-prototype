@@ -12,6 +12,7 @@ import { ReactComponent as IconSteps } from "@/assets/icons/IconSteps.svg";
 import { ReactComponent as IconSleep } from "@/assets/icons/IconSleep.svg";
 import { ReactComponent as IconHeartRate } from "@/assets/icons/IconHeartRate.svg";
 import { ReactComponent as IconDashboard } from "@/assets/icons/IconDashboard.svg";
+import { ReactComponent as IconBloodSugar } from "@/assets/icons/IconBloodSugar.svg";
 import {
   ShortDashboardItem,
   ShortDashboardItemProps,
@@ -54,6 +55,17 @@ const longDashboardItems: Array<LongDashboardItemProps> = [
     statClassName: "text-mediumYellow",
     title: "Steps",
     unit: "Steps",
+  },
+  {
+    Icon: IconBloodSugar,
+    iconClassName: "w-[30px] h-[30px] pb-1 mr-2",
+    highlight: "10% higher",
+    highlightClassName: "text-abnormalRed",
+    insight: "than last week's average",
+    stat: 130,
+    statClassName: "text-abnormalRed",
+    title: "Blood Sugar Level",
+    unit: "mg/dL",
   },
 ];
 
