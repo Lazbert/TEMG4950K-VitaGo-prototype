@@ -25,7 +25,9 @@ export default function SupplementsPage() {
       ? originalSupplements.filter((supp) =>
           state.suppList.includes(supp.suppInfo.name)
         )
-      : originalSupplements
+      : originalSupplements.filter(
+          (supp) => supp.suppInfo.name != "Multivitamins"
+        )
   );
   const [droppedSupp, setDroppedSupp] = useState<Array<string>>([]);
 
@@ -67,7 +69,7 @@ export default function SupplementsPage() {
       >
         <div className="flex flex-col px-[19px]">
           <div className="flex justify-between items-center">
-            <span className="text-heading-2 font-bold">2023 March</span>
+            <span className="text-heading-2 font-bold">2023 May</span>
             <div className="flex gap-[5px]">
               {isSelectMode ? (
                 <button

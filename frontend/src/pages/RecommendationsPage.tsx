@@ -33,14 +33,16 @@ export default function RecommendationsPage() {
             </div>
           </div>
           <div className="self-center border border-[#989191] w-full"></div>
-          {recommendedSupplements.map((suppDetails, key) => (
-            <>
-              {key != 0 && (
-                <div className="self-center border border-[#989191]/50 w-[80%]"></div>
-              )}
-              <RecommendationItem key={key} {...suppDetails} />
-            </>
-          ))}
+          {recommendedSupplements
+            .filter((supp) => supp.name != "Multivitamins")
+            .map((suppDetails, key) => (
+              <>
+                {key != 0 && (
+                  <div className="self-center border border-[#989191]/50 w-[80%]"></div>
+                )}
+                <RecommendationItem key={key} {...suppDetails} />
+              </>
+            ))}
         </div>
       </ContentSection>
       <button

@@ -25,19 +25,19 @@ export const originalSupplements: Array<
       prevention: [],
     },
   },
-  // {
-  //   suppInfo: {
-  //     name: "Multivitamins",
-  //     Display: Blackmores,
-  //     brand: "Blackmores",
-  //     displayClassName: "w-[80px] h-[119px]",
-  //     frequency: "Daily, 1 time a day",
-  //     timer: "Now",
-  //     description:
-  //       "Supplement the inadequate nutrients from imbalanced diet. One-a-day formula with 20 essential nutrients",
-  //     prevention: ["Malnutrition", "Vitamin Deficiency"],
-  //   },
-  // },
+  {
+    suppInfo: {
+      name: "Multivitamins",
+      Display: Blackmores,
+      brand: "Blackmores",
+      displayClassName: "w-[80px] h-[119px]",
+      frequency: "Daily, 1 time a day",
+      timer: "Now",
+      description:
+        "Supplement the inadequate nutrients from imbalanced diet. One-a-day formula with 20 essential nutrients",
+      prevention: ["Malnutrition", "Vitamin Deficiency"],
+    },
+  },
   {
     suppInfo: {
       name: "Starch Neutralizer",
@@ -93,15 +93,15 @@ export const originalSupplements: Array<
 ];
 
 export const recommendedSupplements: Array<RecommendationItemProps> = [
-  // {
-  //   name: "Multivitamins",
-  //   brand: "Blackmores",
-  //   dosageForm: "capsules",
-  //   price: 89,
-  //   servingPerContainer: 30,
-  //   SupplementImage: Blackmores,
-  //   imageClassName: "w-[39px] h-[58px]",
-  // },
+  {
+    name: "Multivitamins",
+    brand: "Blackmores",
+    dosageForm: "capsules",
+    price: 89,
+    servingPerContainer: 30,
+    SupplementImage: Blackmores,
+    imageClassName: "w-[39px] h-[58px]",
+  },
   {
     name: "Digestive Biscuits (Sugar-Free)",
     brand: "Gullon",
