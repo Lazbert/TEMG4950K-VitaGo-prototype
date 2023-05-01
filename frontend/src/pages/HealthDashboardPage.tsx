@@ -56,17 +56,17 @@ const longDashboardItems: Array<LongDashboardItemProps> = [
     title: "Steps",
     unit: "Steps",
   },
-  {
-    Icon: IconBloodSugar,
-    iconClassName: "w-[30px] h-[30px] pb-1 mr-2",
-    highlight: "10% higher",
-    highlightClassName: "text-abnormalRed",
-    insight: "than last week's average",
-    stat: 130,
-    statClassName: "text-abnormalRed",
-    title: "Blood Sugar Level",
-    unit: "mg/dL",
-  },
+  // {
+  //   Icon: IconBloodSugar,
+  //   iconClassName: "w-[30px] h-[30px] pb-1 mr-2",
+  //   highlight: "10% higher",
+  //   highlightClassName: "text-abnormalRed",
+  //   insight: "than last week's average",
+  //   stat: 130,
+  //   statClassName: "text-abnormalRed",
+  //   title: "Blood Sugar Level",
+  //   unit: "mg/dL",
+  // },
 ];
 
 const shortDashboardItem: Array<ShortDashboardItemProps> = [
@@ -82,8 +82,8 @@ const shortDashboardItem: Array<ShortDashboardItemProps> = [
     title: "Heart Rate",
     Icon: IconHeartRate,
     iconClassName: "w-[30px] h-[33px]",
-    stat: 85,
-    statClassName: "text-normalGreen",
+    stat: 100,
+    statClassName: "text-abnormalRed",
     unit: "bpm",
   },
 ];

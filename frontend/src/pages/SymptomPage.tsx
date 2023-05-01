@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const symptoms: Array<SymptomItemProps> = [
   { stat: 37.8, unit: "Degree Celsius", symptom: "Fever" },
+  { stat: 130, unit: "mg/dL", symptom: "Hyperglycemia" },
 ];
 
 export default function SymptomPage() {
