@@ -101,7 +101,7 @@ export default function HealthDashboardPage() {
       >
         <PersonalProfile
           ProfilePic={John}
-          age={22}
+          age={35}
           height={165}
           weight={67}
           name="John"
