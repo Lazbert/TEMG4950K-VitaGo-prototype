@@ -24,7 +24,7 @@ export default function SymptomPage() {
       </ContentSection>
       <div className="flex flex-col gap-[14px] py-[17px] items-center bottom-0 absolute border-t border-grey/30 w-full h-[220px]">
         <button
-          onClick={() => nav("/VitaGo/booking")}
+          onClick={() => nav("/VitaGo/booking", { state: "diabetes" })}
           className="rounded-[40px] min-w-[307px] px-[130px] py-6 bg-highlightBrick text-heading-2 text-white font-bold"
         >
           Next
