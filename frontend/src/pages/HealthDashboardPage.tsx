@@ -105,7 +105,7 @@ export default function HealthDashboardPage() {
           height={165}
           weight={67}
           name="John"
-          imageClassName="h-[100px] w-[100px] self-center"
+          imageClassName="h-[100px] w-[100px] self-center rounded-full"
           showOptions={showOptions}
           setShowOptions={setShowOptions}
         />
