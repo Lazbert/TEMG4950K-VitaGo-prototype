@@ -46,7 +46,7 @@ export default function RecommendationsPage() {
         </div>
       </ContentSection>
       <button
-        onClick={() => nav("delivery")}
+        onClick={() => nav("/VitaGo/supplements")}
         className="absolute bottom-[60px] ml-[43px] w-[307px] h-[70px] bg-highlightBrick text-white font-bold rounded-[40px]"
       >
         Continue
